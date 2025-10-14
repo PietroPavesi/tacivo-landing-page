@@ -11,10 +11,10 @@ function App() {
               <img src="/assets/13.svg" alt="Tacivo" className="h-10" />
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How it Works</a>
-              <a href="#benefits" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Benefits</a>
-              <a href="#platform" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Platform</a>
-              <a href="#pilot" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Pilot Program</a>
+              <a href="#how-it-works" className="text-m text-gray-900 hover:text-tacivo-purple-dark transition-colors">How it Works</a>
+              <a href="#benefits" className="text-m text-gray-900 hover:text-tacivo-orange-dark transition-colors">Benefits</a>
+              <a href="#platform" className="text-m text-gray-900 hover:text-tacivo-purple-dark transition-colors">Platform</a>
+              <a href="#pilot" className="text-m text-gray-900 hover:text-tacivo-orange-dark transition-colors">Pilot Program</a>
               <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Application" className="px-4 py-2 bg-tacivo-purple text-white text-sm rounded-full hover:bg-tacivo-purple-dark transition-colors">Apply for Pilot</a>
             </div>
           </div>
@@ -30,8 +30,8 @@ function App() {
 
         {/* Subtle gradient overlay */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-orange-50 pointer-events-none"
-          style={{ opacity: 0.40 }}  // Sets overall overlay to 60% opacity
+          className="absolute inset-0 bg-gradient-to-br from-tacivo-purple-dark via-white to-orange-50 pointer-events-none"
+          style={{ opacity: 0.30 }}  // Sets overall overlay to 60% opacity
         ></div>
 
 
@@ -47,12 +47,12 @@ function App() {
               Transform Expert Knowledge Into Institutional Intelligence
             </motion.h1>
             <motion.p
-              className="text-lg md:text-xl text-slate-800 mb-12 max-w-2xl mx-auto"
+              className="text-2xl md:text-2xl text-slate-900 mb-12 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              When senior experts leave, critical decision frameworks and strategic insights vanish. Capture irreplaceable expertise through AI-powered conversations before it walks out the door.
+              Capture critical expertise before it walks out the door. Build defensible competitive advantage through tacivo AI-powered knowledge platform.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ function App() {
             >
               <motion.a
                 href="#pilot"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-tacivo-purple text-white text-base font-medium rounded-full shadow-lg shadow-tacivo-purple/20 hover:shadow-xl hover:shadow-tacivo-purple/30 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-tacivo-purple text-white text-base text-m rounded-full shadow-lg shadow-tacivo-purple/20 hover:shadow-xl hover:shadow-tacivo-purple/30 transition-all"
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -84,7 +84,7 @@ function App() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-6 leading-tight">
+              <h2 className="text-5xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6 leading-tight">
                 Your Most <span className="text-tacivo-purple">Defensible Asset</span>
               </h2>
               <p className="text-lg md:text-xl text-slate-600 leading-relaxed">
@@ -112,7 +112,7 @@ function App() {
       <section className="py-32 px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
-            className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-6"
+            className="text-5xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -176,17 +176,18 @@ function App() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl md:text-6xl font-semibold tracking-tight mb-4 
-              bg-[linear-gradient(to_right,#b974f4,#5d3d89,#8f3528,#ff6b4a)] 
-              bg-[length:200%_auto] 
+            <h2 className="text-6xl md:text-6xl font-semibold tracking-tight mb-6 pb-2
+              bg-[linear-gradient(to_right,#b974f4,#5d3d89,#8f3528,#ff6b4a,#8f3528,#5d3d89,#b974f4)] 
+              bg-[length:200%_100%] 
               bg-clip-text text-transparent 
               animate-shimmer">
               Introducing tacivo Platform
             </h2>
 
 
+
             <p className="text-xl text-slate-600">
-              Two powerful tools working together
+              AI-powered knowledge elicitation, in a living knowledge base
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-12">
@@ -202,24 +203,24 @@ function App() {
                 <img src="/assets/2t.svg" alt="tacivo AI" className="h-12" />
               </div>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                AI-guided conversations that extract expert decision frameworks and strategic insights in 30-minute sessions.
+                AI-guided conversations that extract capture tacit knowledge in 30-minute sessions, generating valuable documentation.
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Adaptive questioning by role and context</span>
+                  <span>Captures 10+ years of expertise in under an hour</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Real-time knowledge synthesis</span>
+                  <span>Adapts questions based on role and industry context</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Compliance-ready data handling</span>
+                  <span>Generates ready-to-use documentation automatically</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Multi-language knowledge capture</span>
+                  <span>Guided by proven knowledge elicitation frameworks</span>
                 </li>
               </ul>
             </motion.div>
@@ -235,16 +236,16 @@ function App() {
                 <img src="/assets/3t.svg" alt="tacivo KB" className="h-12" />
               </div>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Living knowledge base that organizes insights into searchable, actionable documentation that evolves with your organization.
+                A living knowledge system that scales with your organization. Searchable, actionable, and enterprise-ready.
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                  <span>Intelligent categorization and search</span>
+                  <span>Find critical insights in seconds, not days</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                  <span>REST API for custom AI agents, RAG systems, and automation</span>
+                  <span>API-ready for custom AI agents and automation</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
@@ -252,7 +253,7 @@ function App() {
                 </li>
                 <li className="flex items-start gap-3">
                   <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                  <span>Role-based access controls</span>
+                  <span>Granular access controls by team and role</span>
                 </li>
               </ul>
             </motion.div>
@@ -269,7 +270,7 @@ function App() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-4">
+            <h2 className="text-5xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-4">
               How It Works
             </h2>
             <p className="text-xl text-slate-600">
@@ -406,7 +407,7 @@ function App() {
       <section id="benefits" className="py-32 px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
-            className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-6"
+            className="text-5xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -490,7 +491,7 @@ function App() {
         <div id="pilot" className="relative py-32 px-6 lg:px-8 z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
-              className="text-5xl md:text-6xl font-semibold tracking-tight mb-6"
+              className="text-5xl md:text-5xl font-semibold tracking-tight mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -537,7 +538,7 @@ function App() {
                     </li>
                     <li className="flex items-start gap-3">
                       <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                      <span>90-day enterprise access with support</span>
+                      <span>120-day enterprise access with support</span>
                     </li>
                   </ul>
                 </div>
@@ -548,19 +549,19 @@ function App() {
                       <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-xs font-bold">1</span>
                       </div>
-                      <span>Week 1: Strategy + first expert session</span>
+                      <span>Week 1: Strategy & Processes definition</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-xs font-bold">2</span>
                       </div>
-                      <span>Week 2-4: Continuous capture + delivery</span>
+                      <span>Week 2-4: Initial knowledge capture & Outputs delivery</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xs font-bold">→</span>
+                        <span className="text-xs font-bold">3</span>
                       </div>
-                      <span>Ongoing: Quarterly knowledge updates</span>
+                      <span>Ongoing: Monthly knowledge updates & Knowledge Base setup</span>
                     </li>
                   </ul>
                 </div>
@@ -589,7 +590,7 @@ function App() {
                     Contact Sales
                   </motion.a>
                 </motion.div>
-                <p className="text-sm text-gray-400">Investment: €15,000 for 120-day commitment</p>
+                <p className="text-sm text-gray-400">Investment: €5,000 for 120-day commitment</p>
               </div>
             </motion.div>
           </div>
@@ -649,9 +650,6 @@ function App() {
           </div>
         </div>
       </section>
-
-
-
     </div>
   );
 }
