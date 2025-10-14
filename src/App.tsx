@@ -8,7 +8,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <img src="/src/assets/1t.svg" alt="Tacivo" className="h-10" />
+              <img src="/public/assets/13.svg" alt="Tacivo" className="h-10" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How it Works</a>
@@ -22,9 +22,20 @@ function App() {
       </nav>
 
       <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-8 overflow-hidden">
-        {/* Subtle gradient background with your brand colors */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50/40 via-white to-orange-50/30 pointer-events-none"></div>
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/hero-bg.avif')" }}
+        ></div>
 
+        {/* Subtle gradient overlay */}
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-orange-50 pointer-events-none"
+          style={{ opacity: 0.40 }}  // Sets overall overlay to 60% opacity
+        ></div>
+
+
+        {/* Content */}
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
@@ -35,16 +46,14 @@ function App() {
             >
               Transform Expert Knowledge Into Institutional Intelligence
             </motion.h1>
-
             <motion.p
-              className="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-slate-900 mb-12 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
               Capture critical expertise before it walks out the door. Build defensible competitive advantage through AI-powered knowledge preservation.
             </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,7 +71,9 @@ function App() {
             </motion.div>
           </div>
         </div>
+
       </section>
+
 
       <section className="py-32 px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -499,7 +510,7 @@ function App() {
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="mb-6">
-                <img src="/src/assets/2t.svg" alt="tacivo AI" className="h-12" />
+                <img src="/public/assets/2t.svg" alt="tacivo AI" className="h-12" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">tacivo AI</h3>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
@@ -529,7 +540,7 @@ function App() {
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="mb-6">
-                <img src="/src/assets/3t.svg" alt="tacivo KB" className="h-12" />
+                <img src="/public/assets/3t.svg" alt="tacivo KB" className="h-12" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">tacivo KB</h3>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
@@ -554,165 +565,181 @@ function App() {
         </div>
       </section>
 
-      <section id="pilot" className="relative py-32 px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-hidden">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <motion.h2
-            className="text-5xl md:text-6xl font-semibold tracking-tight mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            Join Our <span className="text-tacivo-orange">Pilot Program</span>
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-300 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Limited to 3 enterprise organizations for November 2025
-          </motion.p>
+      <section className="relative text-white overflow-hidden">
+        {/* Continuous background image for entire section */}
+        <div
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/footer-bg.avif')" }}
+        ></div>
 
-          <motion.div
-            className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 mb-8 border border-white/20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="grid md:grid-cols-2 gap-8 text-left mb-8">
+        {/* Progressive gradient overlay - lighter at top, darker at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-gray-900/80 to-black/90 pointer-events-none"></div>
+
+        {/* Pilot Section Content */}
+        <div id="pilot" className="relative py-32 px-6 lg:px-8 z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              className="text-5xl md:text-6xl font-semibold tracking-tight mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Join Our <span className="text-tacivo-orange">Pilot Program</span>
+            </motion.h2>
+            <motion.p
+              className="text-xl text-gray-300 mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              Limited to 3 enterprise organizations for November 2025
+            </motion.p>
+
+            <motion.div
+              className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-12 mb-8 border border-white/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="grid md:grid-cols-2 gap-8 text-left mb-8">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4">What You Get</h3>
+                  <ul className="space-y-3 text-gray-200">
+                    <li className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                      <span>Knowledge capture from 2 senior experts</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                      <span>Custom documentation templates</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                      <span>Platform features tailored to your needs</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                      <span>Direct input on product roadmap</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                      <span>90-day enterprise access with support</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4">Timeline</h3>
+                  <ul className="space-y-3 text-gray-200">
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-xs font-bold">1</span>
+                      </div>
+                      <span>Week 1: Setup + first expert session</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-xs font-bold">2</span>
+                      </div>
+                      <span>Week 2: Documentation delivery</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-xs font-bold">→</span>
+                      </div>
+                      <span>Ongoing: Quarterly knowledge updates</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="text-center pt-8 border-t border-white/20">
+                <p className="text-xl text-gray-200 mb-8">Shape the platform with us as a founding pilot partner</p>
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4 justify-center"
+                  whileHover="hover"
+                >
+                  <motion.a
+                    href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-tacivo-orange text-white rounded-full shadow-lg shadow-tacivo-orange/30 font-medium"
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Apply for Pilot Program
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.a>
+                  <motion.a
+                    href="mailto:hello@tacivo.com?subject=Tacivo Sales Inquiry"
+                    className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-colors font-medium"
+                    whileHover={{ y: -2, scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Contact Sales
+                  </motion.a>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Footer Content */}
+        <div className="relative py-20 px-6 lg:px-8 z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-12 mb-16">
+              <div className="md:col-span-2">
+                <img src="/assets/14.svg" alt="Tacivo" className="h-10 mb-5" />
+                <p className="text-gray-400 text-base leading-relaxed max-w-md">
+                  Transform expert knowledge into institutional intelligence. Preserve critical expertise and build defensible competitive advantage.
+                </p>
+              </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-4">What You Get</h3>
-                <ul className="space-y-3 text-gray-200">
-                  <li className="flex items-start gap-3">
-                    <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                    <span>Knowledge capture from 2 senior experts</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                    <span>Custom documentation templates</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                    <span>Platform features tailored to your needs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                    <span>Direct input on product roadmap</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                    <span>90-day enterprise access with support</span>
-                  </li>
+                <h3 className="text-base font-semibold text-white mb-4">Product</h3>
+                <ul className="space-y-3">
+                  <li><a href="#how-it-works" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">How it Works</a></li>
+                  <li><a href="#benefits" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">Benefits</a></li>
+                  <li><a href="#platform" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">Platform</a></li>
+                  <li><a href="#pilot" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">Pilot Program</a></li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-4">Timeline</h3>
-                <ul className="space-y-3 text-gray-200">
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold">1</span>
-                    </div>
-                    <span>Week 1: Setup + first expert session</span>
+                <h3 className="text-base font-semibold text-white mb-4">Contact</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="mailto:hello@tacivo.com" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
+                      hello@tacivo.com
+                    </a>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold">2</span>
-                    </div>
-                    <span>Week 2: Documentation delivery</span>
+                  <li>
+                    <a href="mailto:hello@tacivo.com?subject=Tacivo Demo Request" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
+                      Book a Demo
+                    </a>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-xs font-bold">→</span>
-                    </div>
-                    <span>Ongoing: Quarterly knowledge updates</span>
+                  <li>
+                    <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
+                      Apply for Pilot
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="text-center pt-8 border-t border-white/20">
-              <p className="text-xl text-gray-200 mb-8">Shape the platform with us as a founding pilot partner</p>
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                whileHover="hover"
-              >
-                <motion.a
-                  href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-tacivo-orange text-white rounded-full shadow-lg shadow-tacivo-orange/30 font-medium"
-                  whileHover={{ y: -2, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Apply for Pilot Program
-                  <ArrowRight className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  href="mailto:hello@tacivo.com?subject=Tacivo Sales Inquiry"
-                  className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-colors font-medium"
-                  whileHover={{ y: -2, scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Contact Sales
-                </motion.a>
-              </motion.div>
+            <div className="pt-8 border-t border-gray-800">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-sm text-gray-500">
+                  © 2025 Tacivo. Building the Tacit Knowledge Advantage.
+                </p>
+                <div className="flex items-center gap-6">
+                  <a href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+                  <a href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
+                </div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      <footer className="py-20 px-6 lg:px-8 bg-black text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-16">
-            <div className="md:col-span-2">
-              <img src="/src/assets/1t.svg" alt="Tacivo" className="h-12 mb-6" />
-              <p className="text-gray-400 text-base leading-relaxed max-w-md">
-                Transform expert knowledge into institutional intelligence. Preserve critical expertise and build defensible competitive advantage.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-base font-semibold text-white mb-4">Product</h3>
-              <ul className="space-y-3">
-                <li><a href="#how-it-works" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">How it Works</a></li>
-                <li><a href="#benefits" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">Benefits</a></li>
-                <li><a href="#platform" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">Platform</a></li>
-                <li><a href="#pilot" className="text-gray-400 hover:text-tacivo-purple transition-colors text-sm">Pilot Program</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-base font-semibold text-white mb-4">Contact</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="mailto:hello@tacivo.com" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
-                    hello@tacivo.com
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:hello@tacivo.com?subject=Tacivo Demo Request" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
-                    Book a Demo
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
-                    Apply for Pilot
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="pt-8 border-t border-gray-800">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-gray-500">
-                © 2025 Tacivo. Building the Tacit Knowledge Advantage.
-              </p>
-              <div className="flex items-center gap-6">
-                <a href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
-                <a href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+
+
     </div>
   );
 }
