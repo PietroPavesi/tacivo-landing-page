@@ -3,12 +3,11 @@ import { ArrowRight, Brain, Users, Lock, Zap } from 'lucide-react';
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <nav className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav className="fixed w-full top-0 z-50 bg-transparent backdrop-blur-md border-b border-gray-100/50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <img src="/src/assets/9.svg" alt="Tacivo" className="h-8 w-8" />
-              <span className="text-xl font-medium tracking-tight">tacivo</span>
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center">
+              <img src="/src/assets/1t.svg" alt="Tacivo" className="h-10" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How it Works</a>
@@ -177,131 +176,204 @@ function App() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 border-b border-blue-200">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Decision Framework</h3>
-                <p className="text-sm text-gray-600">Customer Escalation Protocol</p>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="bg-gradient-to-br from-blue-50 via-blue-100 to-indigo-100 p-6 border-b border-blue-200">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">M&A Due Diligence Playbook</h3>
+                    <p className="text-sm text-blue-700">Strategic Decision Framework</p>
+                  </div>
+                  <div className="px-2 py-1 bg-blue-200 rounded text-xs font-medium text-blue-800">Critical</div>
+                </div>
+                <p className="text-xs text-gray-600">Captured from: VP Corporate Development • 15 years experience</p>
               </div>
               <div className="p-6 space-y-4">
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-medium text-blue-600">1</span>
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <span className="text-xs font-bold text-white">1</span>
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Assess Severity</p>
-                      <p className="text-xs text-gray-600 mt-1">Evaluate business impact and account tier</p>
+                      <p className="text-sm font-semibold text-gray-900 mb-1">Strategic Fit Assessment</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">Does this acquisition defend or expand our moat? Look beyond revenue synergies.</p>
                     </div>
                   </div>
-                  <div className="ml-9 border-l-2 border-gray-200 pl-4 py-2">
-                    <p className="text-xs text-gray-600">If Enterprise → Escalate within 2 hours</p>
-                    <p className="text-xs text-gray-600">If Standard → Escalate within 24 hours</p>
+                  <div className="ml-10 space-y-1.5 border-l-2 border-blue-200 pl-4 py-1">
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-600 text-xs mt-0.5">→</span>
+                      <p className="text-xs text-gray-700">Market position: Does it close competitive gaps?</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-600 text-xs mt-0.5">→</span>
+                      <p className="text-xs text-gray-700">Talent acquisition: Are key people likely to stay?</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-600 text-xs mt-0.5">→</span>
+                      <p className="text-xs text-gray-700">Tech stack: Integration complexity vs. value</p>
+                    </div>
                   </div>
                 </div>
-                <div className="space-y-2">
+
+                <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-medium text-blue-600">2</span>
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <span className="text-xs font-bold text-white">2</span>
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Involve Stakeholders</p>
-                      <p className="text-xs text-gray-600 mt-1">Loop in account management and technical leads</p>
+                      <p className="text-sm font-semibold text-gray-900 mb-1">Cultural Due Diligence</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">Most deals fail here. Assess leadership alignment in first 3 meetings.</p>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-2">
+
+                <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-medium text-blue-600">3</span>
+                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <span className="text-xs font-bold text-white">3</span>
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-gray-900">Document Resolution</p>
-                      <p className="text-xs text-gray-600 mt-1">Update KB with learnings and edge cases</p>
+                      <p className="text-sm font-semibold text-gray-900 mb-1">Red Flag Checklist</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">Walk away signals that override financial attractiveness</p>
                     </div>
+                  </div>
+                  <div className="ml-10 bg-red-50 border border-red-200 rounded-lg p-3">
+                    <p className="text-xs font-medium text-red-900 mb-1">⛔ Deal Breakers:</p>
+                    <p className="text-xs text-red-800">Founder unwilling to stay 12mo+ • Customer concentration &gt;40% • Undisclosed litigation</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 border-b border-green-200">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Process Guide</h3>
-                <p className="text-sm text-gray-600">Enterprise Client Onboarding</p>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="bg-gradient-to-br from-emerald-50 via-green-100 to-teal-100 p-6 border-b border-green-200">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Crisis Response Protocol</h3>
+                    <p className="text-sm text-green-700">Operational Playbook</p>
+                  </div>
+                  <div className="px-2 py-1 bg-green-200 rounded text-xs font-medium text-green-800">Live Doc</div>
+                </div>
+                <p className="text-xs text-gray-600">Captured from: Head of Operations • 8 incidents handled</p>
               </div>
               <div className="p-6 space-y-4">
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <h4 className="text-sm font-medium text-gray-900 mb-2">Phase 1: Discovery (Week 1-2)</h4>
-                  <ul className="space-y-1.5 text-xs text-gray-600">
+                <div className="bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 rounded-r-lg p-4">
+                  <h4 className="text-sm font-bold text-red-900 mb-2 flex items-center gap-2">
+                    <span className="text-lg">🚨</span>
+                    First 15 Minutes (Critical Window)
+                  </h4>
+                  <ul className="space-y-2 text-xs text-gray-700">
                     <li className="flex items-start gap-2">
-                      <span className="text-green-600 mt-0.5">✓</span>
-                      <span>Initial stakeholder interviews</span>
+                      <span className="text-red-600 font-bold mt-0.5">1.</span>
+                      <span><strong>Activate war room:</strong> Slack #incident-response + Zoom bridge</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-green-600 mt-0.5">✓</span>
-                      <span>Technical requirements gathering</span>
+                      <span className="text-red-600 font-bold mt-0.5">2.</span>
+                      <span><strong>Assign incident commander:</strong> Most senior eng available</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-green-600 mt-0.5">✓</span>
-                      <span>Success criteria definition</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <h4 className="text-sm font-medium text-gray-900 mb-2">Phase 2: Setup (Week 3-4)</h4>
-                  <ul className="space-y-1.5 text-xs text-gray-600">
-                    <li className="flex items-start gap-2">
-                      <span className="text-gray-400 mt-0.5">○</span>
-                      <span>Environment configuration</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-gray-400 mt-0.5">○</span>
-                      <span>Data migration planning</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-gray-400 mt-0.5">○</span>
-                      <span>User training schedule</span>
+                      <span className="text-red-600 font-bold mt-0.5">3.</span>
+                      <span><strong>Status page update:</strong> "Investigating" within 5 min</span>
                     </li>
                   </ul>
                 </div>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                  <p className="text-xs font-medium text-yellow-900">⚠️ Critical: Get security review approval before data migration</p>
+
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold text-gray-900">Stakeholder Communication Triggers</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="bg-yellow-50 rounded-lg p-2 border border-yellow-200">
+                      <p className="text-xs font-medium text-yellow-900 mb-1">Major (30 min)</p>
+                      <p className="text-xs text-yellow-800">CEO, COO, affected customers</p>
+                    </div>
+                    <div className="bg-orange-50 rounded-lg p-2 border border-orange-200">
+                      <p className="text-xs font-medium text-orange-900 mb-1">Critical (10 min)</p>
+                      <p className="text-xs text-orange-800">+ Board chair, PR team, legal</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                  <p className="text-xs font-semibold text-blue-900 mb-2">💡 Learned the Hard Way:</p>
+                  <p className="text-xs text-blue-800 leading-relaxed">"Over-communicate internally. Assume everyone needs more context. Silent teams make wrong assumptions during incidents."</p>
+                </div>
+
+                <div className="pt-2 border-t border-gray-200">
+                  <p className="text-xs text-gray-500">Updated: 2 weeks ago • Used in: 3 incidents this quarter</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 border-b border-purple-200">
-                <h3 className="text-lg font-medium text-gray-900 mb-2">Strategic Context</h3>
-                <p className="text-sm text-gray-600">Architecture Decision Record</p>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+              <div className="bg-gradient-to-br from-purple-50 via-violet-100 to-fuchsia-100 p-6 border-b border-purple-200">
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Enterprise Sales Negotiation</h3>
+                    <p className="text-sm text-purple-700">Strategic Knowledge Base</p>
+                  </div>
+                  <div className="px-2 py-1 bg-purple-200 rounded text-xs font-medium text-purple-800">Proven</div>
+                </div>
+                <p className="text-xs text-gray-600">Captured from: CRO • $40M+ in closed deals</p>
               </div>
               <div className="p-6 space-y-4">
                 <div>
-                  <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Decision</h4>
-                  <p className="text-sm text-gray-900">Adopt microservices architecture for customer-facing APIs</p>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                    <span>🎯</span>
+                    Pricing Anchoring Strategy
+                  </h4>
+                  <div className="bg-purple-50 rounded-lg p-3 space-y-2">
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-medium text-gray-700">Initial Offer:</span>
+                      <span className="text-xs font-bold text-purple-900">List price (no discount)</span>
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-medium text-gray-700">First Concession:</span>
+                      <span className="text-xs font-bold text-purple-900">10% for 3-year commit</span>
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <span className="text-xs font-medium text-gray-700">Final (if needed):</span>
+                      <span className="text-xs font-bold text-purple-900">15% max + case study</span>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Rationale</h4>
-                  <ul className="space-y-1.5 text-xs text-gray-600">
+
+                <div className="border-l-4 border-amber-400 bg-amber-50 rounded-r-lg p-3">
+                  <h4 className="text-sm font-semibold text-amber-900 mb-2">⚠️ When to Walk Away</h4>
+                  <ul className="space-y-1 text-xs text-amber-800">
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-600 mt-0.5">•</span>
-                      <span>Independent scaling of high-traffic endpoints</span>
+                      <span className="mt-0.5">•</span>
+                      <span>Requesting &gt;20% discount without multi-year commit</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-600 mt-0.5">•</span>
-                      <span>Team autonomy for faster deployment cycles</span>
+                      <span className="mt-0.5">•</span>
+                      <span>No executive sponsor identified after 3 meetings</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-600 mt-0.5">•</span>
-                      <span>Fault isolation for better reliability</span>
+                      <span className="mt-0.5">•</span>
+                      <span>Asking for custom features pre-close (scope creep)</span>
                     </li>
                   </ul>
                 </div>
+
                 <div>
-                  <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Trade-offs</h4>
-                  <p className="text-xs text-gray-600">Increased operational complexity; requires robust monitoring and service mesh</p>
+                  <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">Negotiation Leverage Tactics</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-600 text-sm mt-0.5">→</span>
+                      <p className="text-xs text-gray-700"><strong>Scarcity:</strong> "Implementation slots filling for Q1"</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-600 text-sm mt-0.5">→</span>
+                      <p className="text-xs text-gray-700"><strong>Social proof:</strong> Name-drop similar company in their vertical</p>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-purple-600 text-sm mt-0.5">→</span>
+                      <p className="text-xs text-gray-700"><strong>Value framing:</strong> Cost per user per day (pennies)</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="pt-3 border-t border-gray-200">
-                  <p className="text-xs text-gray-500">Owner: Sarah Chen (CTO) • Oct 2024</p>
+
+                <div className="pt-2 border-t border-gray-200 flex items-center justify-between">
+                  <p className="text-xs text-gray-500">Win rate: 67% when followed</p>
+                  <p className="text-xs font-medium text-purple-600">$8.2M attributed</p>
                 </div>
               </div>
             </div>
@@ -415,10 +487,9 @@ function App() {
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-gray-50 rounded-2xl p-8">
-              <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-6">
-                <Brain className="w-6 h-6 text-white" />
+              <div className="mb-6">
+                <img src="/src/assets/2t.svg" alt="tacivo AI" className="h-12" />
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">tacivo AI</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Your intelligent knowledge extraction partner. Conducts structured conversations with your experts, asking the right questions to surface critical insights, decision frameworks, and tacit knowledge that typically remains undocumented.
               </p>
@@ -438,10 +509,9 @@ function App() {
               </ul>
             </div>
             <div className="bg-gray-50 rounded-2xl p-8">
-              <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-6">
-                <Lock className="w-6 h-6 text-white" />
+              <div className="mb-6">
+                <img src="/src/assets/3t.svg" alt="tacivo KB" className="h-12" />
               </div>
-              <h3 className="text-2xl font-medium text-gray-900 mb-4">tacivo KB</h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
                 Your living knowledge base. Automatically organizes captured insights into searchable, actionable documentation. Decision trees, process guides, and strategic frameworks that evolve with your organization.
               </p>
@@ -518,12 +588,16 @@ function App() {
               </div>
             </div>
             <div className="text-center pt-8 border-t border-white/10">
-              <div className="text-5xl font-light mb-2">$2,500</div>
-              <p className="text-gray-400 mb-8">Pilot partnership investment • Shape the platform with us</p>
-              <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-colors">
-                Apply for Pilot Program
-                <ArrowRight className="w-4 h-4" />
-              </a>
+              <p className="text-xl text-gray-300 mb-8">Shape the platform with us as a founding pilot partner</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 rounded-full hover:bg-gray-100 transition-colors">
+                  Apply for Pilot Program
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <a href="mailto:hello@tacivo.com?subject=Tacivo Sales Inquiry" className="inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors">
+                  Contact Sales
+                </a>
+              </div>
             </div>
           </div>
           <p className="text-sm text-gray-400">
@@ -532,20 +606,55 @@ function App() {
         </div>
       </section>
 
-      <footer className="py-12 px-6 lg:px-8 bg-white border-t border-gray-100">
+      <footer className="py-16 px-6 lg:px-8 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <img src="/src/assets/9.svg" alt="Tacivo" className="h-8 w-8" />
-              <span className="text-xl font-medium tracking-tight">tacivo AI</span>
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            <div>
+              <img src="/src/assets/1t.svg" alt="Tacivo" className="h-12 mb-6" />
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Transform expert knowledge into institutional intelligence. Preserve critical expertise and build defensible competitive advantage.
+              </p>
             </div>
-            <div className="flex items-center gap-8">
-              <a href="mailto:hello@tacivo.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">hello@tacivo.com</a>
-              <a href="https://tacivo.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">www.tacivo.com</a>
+            <div>
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-4">Product</h3>
+              <ul className="space-y-3">
+                <li><a href="#how-it-works" className="text-gray-400 hover:text-white transition-colors text-sm">How it Works</a></li>
+                <li><a href="#benefits" className="text-gray-400 hover:text-white transition-colors text-sm">Benefits</a></li>
+                <li><a href="#platform" className="text-gray-400 hover:text-white transition-colors text-sm">Platform</a></li>
+                <li><a href="#pilot" className="text-gray-400 hover:text-white transition-colors text-sm">Pilot Program</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wide mb-4">Contact</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="mailto:hello@tacivo.com" className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-2">
+                    <span>hello@tacivo.com</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:hello@tacivo.com?subject=Tacivo Demo Request" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    Book a Demo
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application" className="text-gray-400 hover:text-white transition-colors text-sm">
+                    Apply for Pilot
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="mt-8 text-center text-sm text-gray-500">
-            © 2025 Tacivo AI. Building the Tacit Knowledge Advantage.
+          <div className="pt-8 border-t border-gray-800">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-sm text-gray-500">
+                © 2025 Tacivo. Building the Tacit Knowledge Advantage.
+              </p>
+              <div className="flex items-center gap-6">
+                <a href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+                <a href="#" className="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
