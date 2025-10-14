@@ -1,4 +1,4 @@
-import { ArrowRight, Brain, Users, Lock, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 function App() {
@@ -47,12 +47,12 @@ function App() {
               Transform Expert Knowledge Into Institutional Intelligence
             </motion.h1>
             <motion.p
-              className="text-lg md:text-xl text-slate-900 mb-12 max-w-2xl mx-auto"
+              className="text-lg md:text-xl text-slate-800 mb-12 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              Capture critical expertise before it walks out the door. Build defensible competitive advantage through AI-powered knowledge preservation.
+              When senior experts leave, critical decision frameworks and strategic insights vanish. Capture irreplaceable expertise through AI-powered conversations before it walks out the door.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -99,9 +99,10 @@ function App() {
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-7xl font-bold text-tacivo-purple mb-4">87%</div>
+              <div className="text-7xl font-bold text-tacivo-purple mb-4">80%</div>
               <p className="text-xl text-slate-700">
-                of companies lose critical expertise every year
+                of critical expertise is undocumented tacit knowledge
+
               </p>
             </motion.div>
           </div>
@@ -137,8 +138,8 @@ function App() {
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl font-bold text-tacivo-orange mb-3">6-12mo</div>
-              <p className="text-slate-700 text-lg">Productivity gap after key departures</p>
+              <div className="text-4xl font-bold text-tacivo-orange mb-3">$47M</div>
+              <p className="text-slate-700 text-lg">Lost annually from inefficient knowledge sharing</p>
             </motion.div>
             <motion.div
               className="bg-white rounded-2xl p-8 border border-slate-200/60 hover:border-tacivo-purple/30 transition-colors"
@@ -148,8 +149,8 @@ function App() {
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl font-bold text-tacivo-purple mb-3">$2.9M</div>
-              <p className="text-slate-700 text-lg">Average cost per lost executive</p>
+              <div className="text-4xl font-bold text-tacivo-orange mb-3">56%</div>
+              <p className="text-slate-700 text-lg">Of retiring workers are in key leadership positions</p>
             </motion.div>
             <motion.div
               className="bg-white rounded-2xl p-8 border border-slate-200/60 hover:border-tacivo-purple/30 transition-colors"
@@ -159,8 +160,101 @@ function App() {
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-4xl font-bold text-tacivo-orange mb-3">Forever</div>
-              <p className="text-slate-700 text-lg">Strategic context that never gets documented</p>
+              <div className="text-4xl font-bold text-tacivo-orange mb-3">42%</div>
+              <p className="text-slate-700 text-lg">Of role skills known only by current person</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platform" className="py-32 px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-5xl md:text-6xl font-semibold tracking-tight mb-4 
+              bg-[linear-gradient(to_right,#b974f4,#5d3d89,#8f3528,#ff6b4a)] 
+              bg-[length:200%_auto] 
+              bg-clip-text text-transparent 
+              animate-shimmer">
+              Introducing tacivo Platform
+            </h2>
+
+
+            <p className="text-xl text-slate-600">
+              Two powerful tools working together
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div
+              className="bg-white rounded-3xl p-10 border border-slate-200/60 hover:border-tacivo-purple/30 transition-all"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            >
+              <div className="mb-6">
+                <img src="/assets/2t.svg" alt="tacivo AI" className="h-12" />
+              </div>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                AI-guided conversations that extract expert decision frameworks and strategic insights in 30-minute sessions.
+              </p>
+              <ul className="space-y-3 text-slate-700">
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
+                  <span>Adaptive questioning by role and context</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
+                  <span>Real-time knowledge synthesis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
+                  <span>Compliance-ready data handling</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
+                  <span>Multi-language knowledge capture</span>
+                </li>
+              </ul>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-3xl p-10 border border-slate-200/60 hover:border-tacivo-orange/30 transition-all"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            >
+              <div className="mb-6">
+                <img src="/assets/3t.svg" alt="tacivo KB" className="h-12" />
+              </div>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                Living knowledge base that organizes insights into searchable, actionable documentation that evolves with your organization.
+              </p>
+              <ul className="space-y-3 text-slate-700">
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                  <span>Intelligent categorization and search</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                  <span>REST API for custom AI agents, RAG systems, and automation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                  <span>Enterprise-grade security with audit trails</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
+                  <span>Role-based access controls</span>
+                </li>
+              </ul>
             </motion.div>
           </div>
         </div>
@@ -179,10 +273,23 @@ function App() {
               How It Works
             </h2>
             <p className="text-xl text-slate-600">
-              Three steps to preserve your institutional intelligence
+              Four steps to preserve your institutional intelligence
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div
+              className="group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="text-sm font-medium text-tacivo-purple mb-3">Step 0</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">You Define the Focus</h3>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Identify which departments, experts, or knowledge areas are critical—whether facing retirement, restructuring, or scaling.
+              </p>
+            </motion.div>
             <motion.div
               className="group"
               initial={{ opacity: 0, y: 20 }}
@@ -190,12 +297,10 @@ function App() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="bg-gradient-to-br from-tacivo-purple/10 to-tacivo-purple/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Brain className="w-8 h-8 text-tacivo-purple" />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">AI-Guided Capture</h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                30-minute conversations that extract expert decision frameworks and strategic insights.
+              <div className="text-sm font-medium text-tacivo-orange mb-3">Step 1</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">AI-Guided Conversation</h3>
+              <p className="text-base text-slate-600 leading-relaxed">
+                30-minute conversation with tacivo AI. No forms, no surveys—just natural knowledge sharing.
               </p>
             </motion.div>
             <motion.div
@@ -205,12 +310,10 @@ function App() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="bg-gradient-to-br from-tacivo-orange/10 to-tacivo-orange/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Zap className="w-8 h-8 text-tacivo-orange" />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">Auto Documentation</h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Transform conversations into playbooks, frameworks, and protocols your team will use.
+              <div className="text-sm font-medium text-tacivo-purple mb-3">Step 2</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Automated Documentation</h3>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Conversations become useful playbooks, datasets, and AI-ready intelligence—no manual processing required.
               </p>
             </motion.div>
             <motion.div
@@ -220,196 +323,85 @@ function App() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <div className="bg-gradient-to-br from-tacivo-purple/10 to-tacivo-orange/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Lock className="w-8 h-8 text-tacivo-purple-dark" />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">Living Knowledge Base</h3>
-              <p className="text-lg text-slate-600 leading-relaxed">
-                Continuously evolving intelligence that grows with your organization.
+              <div className="text-sm font-medium text-tacivo-orange mb-3">Step 3</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Living Knowledge Base</h3>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Knowledge evolves in tacivo KB. New hires access context. AI systems train on expertise. Decisions draw on collective intelligence.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      <section id="outputs" className="py-32 px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-7xl mx-auto">
+{/* Beyond Documented Knowledge Section */}
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
           <motion.div
-            className="text-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
+            className="relative overflow-hidden rounded-2xl border border-slate-200/60"
           >
-            <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-6">
-              Documentation That <span className="text-tacivo-purple">Actually Gets Used</span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Transform expert conversations into clear, actionable playbooks
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              className="bg-white rounded-2xl p-8 border border-slate-200/60 hover:border-tacivo-purple/30 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            {/* Background image inside the box */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: 'url(/image.avif)' }}
             >
-              <div className="text-sm font-medium text-tacivo-purple mb-3">Strategic</div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">Decision Frameworks</h3>
-              <p className="text-slate-600 mb-6">
-                M&A playbooks, investment criteria, and strategic trade-offs your leadership uses daily.
-              </p>
-              <div className="text-sm text-slate-500">
-                Example: VP Corporate Development → Due Diligence Playbook
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white rounded-2xl p-8 border border-slate-200/60 hover:border-tacivo-orange/30 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            >
-              <div className="text-sm font-medium text-tacivo-orange mb-3">Operational</div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">Crisis Protocols</h3>
-              <p className="text-slate-600 mb-6">
-                Incident response workflows, escalation paths, and communication templates that save hours.
-              </p>
-              <div className="text-sm text-slate-500">
-                Example: Head of Operations → Crisis Response Playbook
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="bg-white rounded-2xl p-8 border border-slate-200/60 hover:border-tacivo-purple/30 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            >
-              <div className="text-sm font-medium text-tacivo-purple mb-3">Commercial</div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">Sales Playbooks</h3>
-              <p className="text-slate-600 mb-6">
-                Negotiation tactics, pricing strategies, and deal qualification criteria that close deals.
-              </p>
-              <div className="text-sm text-slate-500">
-                Example: CRO → Enterprise Negotiation Guide
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Scrollable Documentation Types Section */}
-      <section className="py-20 px-6 lg:px-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-3">More Documentation Types</h3>
-            <p className="text-lg text-slate-600">Capture knowledge across every function</p>
-          </motion.div>
-
-          <div className="relative">
-            <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory">
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="text-sm font-medium text-tacivo-purple mb-2">Leadership</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Board Meeting Prep</h4>
-                <p className="text-slate-600 text-sm">Key metrics, talking points, and anticipated questions from board members</p>
-              </motion.div>
-
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.05 }}
-              >
-                <div className="text-sm font-medium text-tacivo-orange mb-2">Product</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Feature Prioritization</h4>
-                <p className="text-slate-600 text-sm">Framework for deciding what to build next based on impact and effort</p>
-              </motion.div>
-
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-              >
-                <div className="text-sm font-medium text-tacivo-purple mb-2">Customer Success</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Renewal Playbook</h4>
-                <p className="text-slate-600 text-sm">Early warning signals and intervention strategies for at-risk accounts</p>
-              </motion.div>
-
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.15 }}
-              >
-                <div className="text-sm font-medium text-tacivo-orange mb-2">Engineering</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Architecture Decisions</h4>
-                <p className="text-slate-600 text-sm">Technical trade-offs and rationale behind major system design choices</p>
-              </motion.div>
-
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-              >
-                <div className="text-sm font-medium text-tacivo-purple mb-2">Marketing</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Campaign Playbooks</h4>
-                <p className="text-slate-600 text-sm">What messaging works, which channels perform, and budget allocation strategies</p>
-              </motion.div>
-
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.25 }}
-              >
-                <div className="text-sm font-medium text-tacivo-orange mb-2">Finance</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Forecasting Models</h4>
-                <p className="text-slate-600 text-sm">Revenue projection methodologies and key assumptions that drive planning</p>
-              </motion.div>
-
-              <motion.div
-                className="flex-shrink-0 w-80 bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-slate-200/60 snap-start"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
-                <div className="text-sm font-medium text-tacivo-purple mb-2">Legal</div>
-                <h4 className="text-xl font-semibold text-slate-900 mb-2">Contract Negotiation</h4>
-                <p className="text-slate-600 text-sm">Deal terms that are negotiable, red lines, and vendor relationship management</p>
-              </motion.div>
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-900/60 via-slate-900/50 to-black/45"></div>
             </div>
-          </div>
+
+            {/* Content */}
+            <div className="relative z-10 p-8 md:p-10">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-4">
+                Beyond Documented Knowledge
+              </h2>
+
+              <p className="text-lg md:text-xl font-semibold text-tacivo-orange mb-6 leading-tight">
+                Enterprise AI has a blind spot: 80% of expertise is never documented.
+              </p>
+
+              <p className="text-base text-gray-200 mb-6 leading-relaxed">
+                Tools like Copilot search your existing documents. But they can't access the tacit knowledge in experts' heads—judgment calls, contextual decisions, exception handling.
+              </p>
+
+              <p className="text-lg font-semibold text-white mb-4">
+                Tacivo fills the gap:
+              </p>
+
+              <div className="space-y-3 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="text-lg text-tacivo-orange">✓</div>
+                  <div>
+                    <span className="font-semibold text-white">Expert Intelligence</span>
+                    <span className="text-gray-300"> - Playbooks that preserve institutional wisdom</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="text-lg text-tacivo-orange">✓</div>
+                  <div>
+                    <span className="font-semibold text-white">AI-Ready Knowledge</span>
+                    <span className="text-gray-300"> - Structured data that powers custom agents</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="text-lg text-tacivo-orange">✓</div>
+                  <div>
+                    <span className="font-semibold text-white">Compounding Value</span>
+                    <span className="text-gray-300"> - Every conversation makes your system smarter</span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-base text-gray-200 font-medium border-t border-white/20 pt-4">
+                Traditional tools organize what's written. Tacivo captures what never gets documented.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
+
 
       <section id="benefits" className="py-32 px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center">
@@ -420,7 +412,7 @@ function App() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            Measurable <span className="text-tacivo-orange">Impact</span>
+            Real <span className="text-tacivo-orange">Impact</span>
           </motion.h2>
           <motion.p
             className="text-xl text-slate-600 mb-16 max-w-3xl mx-auto"
@@ -441,8 +433,8 @@ function App() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <ArrowRight className="w-6 h-6 text-tacivo-purple mb-4" />
-              <h3 className="text-2xl font-semibold text-slate-900 mb-2">60% Faster Onboarding</h3>
-              <p className="text-slate-600">Comprehensive training protocols accelerate new hire productivity</p>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-2">70% Faster Onboarding</h3>
+              <p className="text-slate-600">Training protocols accelerate new hire productivity</p>
             </motion.div>
 
             <motion.div
@@ -454,7 +446,7 @@ function App() {
             >
               <ArrowRight className="w-6 h-6 text-tacivo-orange mb-4" />
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">Decision Continuity</h3>
-              <p className="text-slate-600">Strategic frameworks ensure consistent execution through transitions</p>
+              <p className="text-slate-600">Documented frameworks ensure consistent execution</p>
             </motion.div>
 
             <motion.div
@@ -466,7 +458,7 @@ function App() {
             >
               <ArrowRight className="w-6 h-6 text-tacivo-purple mb-4" />
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">Reduced Risk</h3>
-              <p className="text-slate-600">Succession planning that protects against leadership departures</p>
+              <p className="text-slate-600">Protection against leadership transitions and attrition</p>
             </motion.div>
 
             <motion.div
@@ -478,88 +470,7 @@ function App() {
             >
               <ArrowRight className="w-6 h-6 text-tacivo-orange mb-4" />
               <h3 className="text-2xl font-semibold text-slate-900 mb-2">AI-Ready Intelligence</h3>
-              <p className="text-slate-600">Structured knowledge base powers intelligent automation</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section id="platform" className="py-32 px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-20"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-4">
-              The Platform
-            </h2>
-            <p className="text-xl text-slate-600">
-              Two powerful tools working together
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              className="bg-white rounded-3xl p-10 border border-slate-200/60 hover:border-tacivo-purple/30 transition-all"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            >
-              <div className="mb-6">
-                <img src="/assets/2t.svg" alt="tacivo AI" className="h-12" />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">tacivo AI</h3>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                AI-guided conversations that extract expert decision frameworks and strategic insights in 30-minute sessions.
-              </p>
-              <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Adaptive questioning by role and context</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Real-time knowledge synthesis</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-tacivo-purple mt-1 flex-shrink-0" />
-                  <span>Continuous organizational learning</span>
-                </li>
-              </ul>
-            </motion.div>
-            <motion.div
-              className="bg-white rounded-3xl p-10 border border-slate-200/60 hover:border-tacivo-orange/30 transition-all"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -4, transition: { duration: 0.3 } }}
-            >
-              <div className="mb-6">
-                <img src="/assets/3t.svg" alt="tacivo KB" className="h-12" />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">tacivo KB</h3>
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                Living knowledge base that organizes insights into searchable, actionable documentation that evolves with your organization.
-              </p>
-              <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                  <span>Intelligent categorization and search</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                  <span>Role-based access controls</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <ArrowRight className="w-5 h-5 text-tacivo-orange mt-1 flex-shrink-0" />
-                  <span>API for AI agents and tools</span>
-                </li>
-              </ul>
+              <p className="text-slate-600">Structured knowledge powers AI agents and automation</p>
             </motion.div>
           </div>
         </div>
@@ -585,7 +496,7 @@ function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Join Our <span className="text-tacivo-orange">Pilot Program</span>
+              <span className="text-tacivo-orange">Founding Partner</span> Program
             </motion.h2>
             <motion.p
               className="text-xl text-gray-300 mb-12"
@@ -594,7 +505,7 @@ function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Limited to 3 enterprise organizations for November 2025
+              5 organizations for Q1 2026
             </motion.p>
 
             <motion.div
@@ -637,13 +548,13 @@ function App() {
                       <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-xs font-bold">1</span>
                       </div>
-                      <span>Week 1: Setup + first expert session</span>
+                      <span>Week 1: Strategy + first expert session</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
                         <span className="text-xs font-bold">2</span>
                       </div>
-                      <span>Week 2: Documentation delivery</span>
+                      <span>Week 2-4: Continuous capture + delivery</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-1">
@@ -655,18 +566,18 @@ function App() {
                 </div>
               </div>
               <div className="text-center pt-8 border-t border-white/20">
-                <p className="text-xl text-gray-200 mb-8">Shape the platform with us as a founding pilot partner</p>
+                <p className="text-xl text-gray-200 mb-8">Shape the platform with us as a founding partner</p>
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-4 justify-center"
+                  className="flex flex-col sm:flex-row gap-4 justify-center mb-6"
                   whileHover="hover"
                 >
                   <motion.a
-                    href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application"
+                    href="mailto:hello@tacivo.com?subject=Tacivo Founding Partner Application"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-tacivo-orange text-white rounded-full shadow-lg shadow-tacivo-orange/30 font-medium"
                     whileHover={{ y: -2, scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    Apply for Pilot Program
+                    Apply for Partnership
                     <ArrowRight className="w-5 h-5" />
                   </motion.a>
                   <motion.a
@@ -678,6 +589,7 @@ function App() {
                     Contact Sales
                   </motion.a>
                 </motion.div>
+                <p className="text-sm text-gray-400">Investment: €15,000 for 120-day commitment</p>
               </div>
             </motion.div>
           </div>
@@ -716,8 +628,8 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:hello@tacivo.com?subject=Tacivo Pilot Program Application" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
-                      Apply for Pilot
+                    <a href="mailto:hello@tacivo.com?subject=Tacivo Founding Partner Application" className="text-gray-400 hover:text-tacivo-orange transition-colors text-sm">
+                      Apply for Partnership
                     </a>
                   </li>
                 </ul>
