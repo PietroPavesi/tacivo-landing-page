@@ -8,7 +8,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center">
-              <img src="/public/assets/13.svg" alt="Tacivo" className="h-10" />
+              <img src="/assets/13.svg" alt="Tacivo" className="h-10" />
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How it Works</a>
@@ -510,7 +510,7 @@ function App() {
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="mb-6">
-                <img src="/public/assets/2t.svg" alt="tacivo AI" className="h-12" />
+                <img src="/assets/2t.svg" alt="tacivo AI" className="h-12" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">tacivo AI</h3>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
@@ -540,7 +540,7 @@ function App() {
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="mb-6">
-                <img src="/public/assets/3t.svg" alt="tacivo KB" className="h-12" />
+                <img src="/assets/3t.svg" alt="tacivo KB" className="h-12" />
               </div>
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">tacivo KB</h3>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
