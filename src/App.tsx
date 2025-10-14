@@ -61,12 +61,15 @@ function App() {
             >
               <motion.a
                 href="#pilot"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-tacivo-purple text-white text-base text-m rounded-full shadow-lg shadow-tacivo-purple/20 hover:shadow-xl hover:shadow-tacivo-purple/30 transition-all"
+                className="relative inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-tacivo-purple via-tacivo-orange to-tacivo-purple bg-[length:200%_100%] text-white text-base font-medium rounded-full shadow-lg shadow-tacivo-purple/20 hover:shadow-xl hover:shadow-tacivo-purple/30 transition-all overflow-hidden group"
+                style={{
+                  animation: 'shimmer 5s linear infinite'
+                }}
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Start Preserving Knowledge
-                <ArrowRight className="w-5 h-5" />
+                <span className="relative z-10">Start Preserving Knowledge</span>
+                <ArrowRight className="w-5 h-5 relative z-10" />
               </motion.a>
             </motion.div>
           </div>
@@ -277,57 +280,76 @@ function App() {
               Four steps to preserve your institutional intelligence
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <motion.div
-              className="group"
+              className="relative bg-gradient-to-br from-tacivo-purple/5 to-transparent rounded-2xl p-6 border border-tacivo-purple/20 hover:border-tacivo-purple/40 transition-all group hover:shadow-lg hover:shadow-tacivo-purple/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-sm font-medium text-tacivo-purple mb-3">Step 0</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">You Define the Focus</h3>
-              <p className="text-base text-slate-600 leading-relaxed">
+              <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-tacivo-purple/10 flex items-center justify-center text-2xl font-bold text-tacivo-purple group-hover:scale-110 transition-transform">
+                0
+              </div>
+              <div className="text-sm font-semibold text-tacivo-purple mb-3 uppercase tracking-wide">Step 0</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">You Define the Focus</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
                 Identify which departments, experts, or knowledge areas are critical—whether facing retirement, restructuring, or scaling.
               </p>
             </motion.div>
+
             <motion.div
-              className="group"
+              className="relative bg-gradient-to-br from-tacivo-orange/5 to-transparent rounded-2xl p-6 border border-tacivo-orange/20 hover:border-tacivo-orange/40 transition-all group hover:shadow-lg hover:shadow-tacivo-orange/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-sm font-medium text-tacivo-orange mb-3">Step 1</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">AI-Guided Conversation</h3>
-              <p className="text-base text-slate-600 leading-relaxed">
-                30-minute conversation with tacivo AI. No forms, no surveys—just natural knowledge sharing.
+              <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-tacivo-orange/10 flex items-center justify-center text-2xl font-bold text-tacivo-orange group-hover:scale-110 transition-transform">
+                1
+              </div>
+              <div className="text-sm font-semibold text-tacivo-orange mb-3 uppercase tracking-wide">Step 1</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">AI-Guided Conversation</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                30-minute conversation with tacivo AI. No forms, no surveys—just natural knowledge extraction.
               </p>
             </motion.div>
+
             <motion.div
-              className="group"
+              className="relative bg-gradient-to-br from-tacivo-purple/5 to-transparent rounded-2xl p-6 border border-tacivo-purple/20 hover:border-tacivo-purple/40 transition-all group hover:shadow-lg hover:shadow-tacivo-purple/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-sm font-medium text-tacivo-purple mb-3">Step 2</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Automated Documentation</h3>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Conversations become useful playbooks, datasets, and AI-ready intelligence—no manual processing required.
+              <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-tacivo-purple/10 flex items-center justify-center text-2xl font-bold text-tacivo-purple group-hover:scale-110 transition-transform">
+                2
+              </div>
+              <div className="text-sm font-semibold text-tacivo-purple mb-3 uppercase tracking-wide">Step 2</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">Automated Documentation</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Conversations become playbooks, datasets, and AI-ready intelligence—no manual processing required.
               </p>
             </motion.div>
+
             <motion.div
-              className="group"
+              className="relative bg-gradient-to-br from-tacivo-orange/5 to-transparent rounded-2xl p-6 border border-tacivo-orange/20 hover:border-tacivo-orange/40 transition-all group hover:shadow-lg hover:shadow-tacivo-orange/10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-sm font-medium text-tacivo-orange mb-3">Step 3</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Living Knowledge Base</h3>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Knowledge evolves in tacivo KB. New hires access context. AI systems train on expertise. Decisions draw on collective intelligence.
+              <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-tacivo-orange/10 flex items-center justify-center text-2xl font-bold text-tacivo-orange group-hover:scale-110 transition-transform">
+                3
+              </div>
+              <div className="text-sm font-semibold text-tacivo-orange mb-3 uppercase tracking-wide">Step 3</div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">Living Knowledge Base</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Knowledge evolves in tacivo KB. New hires access context. AI systems train on expertise.
               </p>
             </motion.div>
           </div>
