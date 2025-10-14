@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Add your selection color here */
+::selection {
+  background: #b974f4; /* tacivo purple */
+  color: white;
+}
+
+::-moz-selection { /* Firefox support */
+  background: #b974f4;
+  color: white;
+}
+
+
 @layer base {
   html {
     scroll-behavior: smooth;
