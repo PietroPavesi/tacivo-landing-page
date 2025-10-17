@@ -7,9 +7,6 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-
-  // Configure output for Vercel deployment
-  output: 'standalone',
 };
 
 module.exports = nextConfig;
