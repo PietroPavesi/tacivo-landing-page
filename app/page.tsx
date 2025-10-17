@@ -1,8 +1,10 @@
+'use client';
+
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState } from 'react';
 
-function App() {
+export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const headerBg = useTransform(
@@ -802,5 +804,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

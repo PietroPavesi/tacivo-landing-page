@@ -8,12 +8,12 @@ Tacivo transforms organizational tacit knowledge into structured, searchable AI-
 
 ## Tech Stack
 
-- **Framework**: React 18.3.1 with TypeScript
-- **Build Tool**: Vite 5.4.2
+- **Framework**: Next.js 15.5.6 (App Router) with React 18.3.1
+- **Language**: TypeScript 5.5.3
 - **Styling**: Tailwind CSS 3.4.1
 - **Animations**: Framer Motion 12.23.24
 - **Icons**: Lucide React 0.344.0
-- **Font**: Inter (Google Fonts)
+- **Font**: Inter (via next/font/google for optimal loading)
 
 ## Design System
 
@@ -44,15 +44,18 @@ Orange Dark: #8f3528
 
 ```
 tacivo-landing-page/
-├── src/
-│   ├── App.tsx           # Main application component with all sections
-│   ├── main.tsx          # Application entry point
-│   └── index.css         # Global styles and custom animations
+├── app/
+│   ├── layout.tsx        # Root layout with metadata and fonts
+│   ├── page.tsx          # Main page component (client component)
+│   └── globals.css       # Global styles and Tailwind directives
 ├── public/
-│   └── assets/           # Images and SVG files
-├── index.html            # HTML entry point
+│   ├── assets/           # SVG logos and icons
+│   ├── hero-bg.avif      # Hero section background
+│   ├── footer-bg.avif    # Footer section background
+│   └── image.avif        # Feature section image
+├── next.config.js        # Next.js configuration
 ├── tailwind.config.js    # Tailwind configuration with brand colors
-├── vite.config.ts        # Vite configuration
+├── tsconfig.json         # TypeScript configuration
 └── package.json          # Dependencies and scripts
 ```
 
@@ -100,7 +103,7 @@ npm run typecheck
 npm run lint
 ```
 
-The development server will start at `http://localhost:5173`
+The development server will start at `http://localhost:3000`
 
 ### Build
 
@@ -108,26 +111,35 @@ The development server will start at `http://localhost:5173`
 # Create production build
 npm run build
 
-# Preview production build
-npm run preview
+# Start production server
+npm run start
 ```
 
 ## Deployment
 
-The project is configured for deployment on platforms like Vercel, Netlify, or any static hosting service.
+The project is optimized for deployment on Vercel with automatic GitHub integration. It also supports other Next.js hosting platforms.
 
-Build output will be in the `dist/` directory.
+### Vercel Deployment (Recommended)
+
+1. Push your code to GitHub
+2. Import the repository in Vercel
+3. Vercel will automatically detect Next.js and configure the build
+4. Every push to `main` will trigger a new deployment
+
+Build output will be in the `.next/` directory.
 
 ## Features
 
-- Responsive design for all screen sizes
-- Smooth scroll animations
-- Custom shimmer effects
-- Glass-morphism UI elements
-- Gradient overlays
-- Interactive hover states
-- Optimized performance with Vite
-- TypeScript for type safety
+- **Server-Side Rendering (SSR)**: Full HTML content rendered on the server for optimal SEO
+- **Responsive design**: Optimized for all screen sizes from mobile to desktop
+- **Smooth animations**: Framer Motion scroll-triggered animations
+- **Custom shimmer effects**: Gradient animations on CTA buttons
+- **Glass-morphism UI**: Modern translucent design elements
+- **Gradient overlays**: Beautiful background compositions
+- **Interactive hover states**: Engaging micro-interactions
+- **Optimized fonts**: Next.js font optimization with Inter from Google Fonts
+- **TypeScript**: Full type safety across the codebase
+- **SEO optimized**: Complete meta tags, OpenGraph, and Twitter Card support
 
 ## Browser Support
 
