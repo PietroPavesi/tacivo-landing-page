@@ -12,7 +12,10 @@ module.exports = {
           '100%': { backgroundPosition: '200% center' },
         },
       },
-
+      fontFamily: {
+        'serif': ['var(--font-merriweather)', 'Georgia', 'serif'],
+        'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
       colors: {
         'tacivo': {
           'purple': '#b974f4',

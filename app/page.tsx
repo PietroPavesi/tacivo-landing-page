@@ -168,7 +168,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10 w-full">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] font-semibold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] px-2"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] font-normal tracking-tight text-slate-800 mb-4 sm:mb-6 leading-[1.15] sm:leading-[1.1] px-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -216,7 +216,7 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-slate-900 mb-4 sm:mb-6 leading-tight">
                 Your Most <span className="text-tacivo-purple">Defensible Asset</span>
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed">
@@ -231,7 +231,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-5xl sm:text-6xl md:text-7xl font-bold text-tacivo-purple mb-3 sm:mb-4">80%</div>
+              <div className="font-serif text-5xl sm:text-6xl md:text-7xl font-normal text-tacivo-purple mb-3 sm:mb-4">80%</div>
               <p className="text-lg sm:text-xl text-slate-700">
                 of critical expertise is undocumented tacit knowledge
 
@@ -244,7 +244,7 @@ export default function Home() {
       <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-4 sm:mb-6"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-slate-900 mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -270,7 +270,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-tacivo-orange mb-2 sm:mb-3">$47M</div>
+              <div className="font-serif text-3xl sm:text-4xl font-normal text-tacivo-orange mb-2 sm:mb-3">$47M</div>
               <p className="text-slate-700 text-sm sm:text-base md:text-lg">Lost annually from inefficient knowledge sharing</p>
             </motion.div>
             <motion.div
@@ -281,7 +281,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-tacivo-orange mb-2 sm:mb-3">56%</div>
+              <div className="font-serif text-3xl sm:text-4xl font-normal text-tacivo-orange mb-2 sm:mb-3">56%</div>
               <p className="text-slate-700 text-sm sm:text-base md:text-lg">Of retiring workers are in key leadership positions</p>
             </motion.div>
             <motion.div
@@ -292,7 +292,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <div className="text-3xl sm:text-4xl font-bold text-tacivo-orange mb-2 sm:mb-3">42%</div>
+              <div className="font-serif text-3xl sm:text-4xl font-normal text-tacivo-orange mb-2 sm:mb-3">42%</div>
               <p className="text-slate-700 text-sm sm:text-base md:text-lg">Of role skills known only by current person</p>
             </motion.div>
           </div>
@@ -308,12 +308,12 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight mb-4 sm:mb-6 pb-2
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight mb-4 sm:mb-6 pb-2
               bg-[linear-gradient(to_right,#b974f4,#5d3d89,#8f3528,#ff6b4a,#8f3528,#5d3d89,#b974f4)]
               bg-[length:200%_100%]
               bg-clip-text text-transparent
               animate-shimmer px-2">
-              Introducing tacivo Platform
+              Introducing the tacivo Platform
             </h2>
 
 
@@ -335,7 +335,7 @@ export default function Home() {
                 <img src="/assets/2t.svg" alt="tacivo AI" className="h-10 sm:h-12" />
               </div>
               <p className="text-base sm:text-lg text-slate-600 mb-4 sm:mb-6 leading-relaxed">
-                AI-guided conversations that extract capture tacit knowledge in 30-minute sessions, generating valuable documentation.
+                AI-guided conversations that capture tacit knowledge in 30-minute sessions, generating valuable documentation.
               </p>
               <ul className="space-y-2 sm:space-y-3 text-slate-700 text-sm sm:text-base">
                 <li className="flex items-start gap-2 sm:gap-3">
@@ -402,7 +402,7 @@ export default function Home() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-3 sm:mb-4">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-slate-900 mb-3 sm:mb-4">
               How It Works
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-slate-600 px-2">
@@ -422,9 +422,9 @@ export default function Home() {
                 0
               </div>
               <div className="text-sm font-semibold text-tacivo-purple mb-3 uppercase tracking-wide">Step 0</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">You Define the Focus</h3>
+              <h3 className="font-serif text-xl font-normal text-slate-900 mb-3 pr-12">You Define the Focus</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Identify which departments, experts, or knowledge areas are critical—whether facing retirement, restructuring, or scaling.
+                Identify which departments, experts, or knowledge areas are critical; whether facing retirement, restructuring, or scaling.
               </p>
             </motion.div>
 
@@ -440,9 +440,9 @@ export default function Home() {
                 1
               </div>
               <div className="text-sm font-semibold text-tacivo-orange mb-3 uppercase tracking-wide">Step 1</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">AI-Guided Conversation</h3>
+              <h3 className="font-serif text-xl font-normal text-slate-900 mb-3 pr-12">AI-Guided Conversation</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                30-minute conversation with tacivo AI. No forms, no surveys—just natural knowledge extraction.
+                30-minute conversation with tacivo AI. No forms, no surveys. Just natural knowledge transfer.
               </p>
             </motion.div>
 
@@ -458,9 +458,9 @@ export default function Home() {
                 2
               </div>
               <div className="text-sm font-semibold text-tacivo-purple mb-3 uppercase tracking-wide">Step 2</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">Automated Documentation</h3>
+              <h3 className="font-serif text-xl font-normal text-slate-900 mb-3 pr-12">Automated Documentation</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Conversations become playbooks, datasets, and AI-ready intelligence—no manual processing required.
+                Conversations become playbooks, datasets, and AI-ready intelligence. No manual processing required.
               </p>
             </motion.div>
 
@@ -476,7 +476,7 @@ export default function Home() {
                 3
               </div>
               <div className="text-sm font-semibold text-tacivo-orange mb-3 uppercase tracking-wide">Step 3</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3 pr-12">Living Knowledge Base</h3>
+              <h3 className="font-serif text-xl font-normal text-slate-900 mb-3 pr-12">Living Knowledge Base</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Knowledge evolves in tacivo KB. New hires access context. AI systems train on expertise.
               </p>
@@ -506,7 +506,7 @@ export default function Home() {
 
             {/* Content */}
             <div className="relative z-10 p-6 sm:p-8 md:p-10">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white mb-3 sm:mb-4">
+              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-normal tracking-tight text-white mb-3 sm:mb-4">
                 Beyond Documented Knowledge
               </h2>
 
@@ -515,11 +515,11 @@ export default function Home() {
               </p>
 
               <p className="text-sm sm:text-base text-gray-200 mb-4 sm:mb-6 leading-relaxed">
-                Tools like Copilot search your existing documents. But they can't access the tacit knowledge in experts' heads—judgment calls, contextual decisions, exception handling.
+                Tools like Copilot search your existing documents. But they can't access the tacit knowledge in experts' heads: judgment calls, contextual decisions, exception handling. In a world where ChatGPT answers everything publicly knowable, the only sustainable advantage is what your people know that AI doesn't.
               </p>
 
               <p className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">
-                Tacivo fills the gap:
+                Tacivo fills the gap: while AI commoditizes public knowledge, Tacivo protects your edge.
               </p>
 
               <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
@@ -527,14 +527,14 @@ export default function Home() {
                   <div className="text-base sm:text-lg text-tacivo-orange flex-shrink-0">✓</div>
                   <div className="text-sm sm:text-base">
                     <span className="font-semibold text-white">Expert Intelligence</span>
-                    <span className="text-gray-300"> - Playbooks that preserve institutional wisdom</span>
+                    <span className="text-gray-300"> - Preserve your team's tacit expertise </span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
                   <div className="text-base sm:text-lg text-tacivo-orange flex-shrink-0">✓</div>
                   <div className="text-sm sm:text-base">
                     <span className="font-semibold text-white">AI-Ready Knowledge</span>
-                    <span className="text-gray-300"> - Structured data that powers custom agents</span>
+                    <span className="text-gray-300"> - Structured data that powers custom AI agents</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-2 sm:gap-3">
@@ -558,7 +558,7 @@ export default function Home() {
       <section id="benefits" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-5xl mx-auto text-center">
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-4 sm:mb-6"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-slate-900 mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -585,7 +585,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-tacivo-purple mb-3 sm:mb-4" />
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 mb-1 sm:mb-2">70% Faster Onboarding</h3>
+              <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-slate-900 mb-1 sm:mb-2">70% Faster Onboarding</h3>
               <p className="text-sm sm:text-base text-slate-600">Training protocols accelerate new hire productivity</p>
             </motion.div>
 
@@ -597,7 +597,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-tacivo-orange mb-3 sm:mb-4" />
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 mb-1 sm:mb-2">Decision Continuity</h3>
+              <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-slate-900 mb-1 sm:mb-2">Decision Continuity</h3>
               <p className="text-sm sm:text-base text-slate-600">Documented frameworks ensure consistent execution</p>
             </motion.div>
 
@@ -609,7 +609,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-tacivo-purple mb-3 sm:mb-4" />
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 mb-1 sm:mb-2">Reduced Risk</h3>
+              <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-slate-900 mb-1 sm:mb-2">Reduced Risk</h3>
               <p className="text-sm sm:text-base text-slate-600">Protection against leadership transitions and attrition</p>
             </motion.div>
 
@@ -621,7 +621,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-tacivo-orange mb-3 sm:mb-4" />
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 mb-1 sm:mb-2">AI-Ready Intelligence</h3>
+              <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal text-slate-900 mb-1 sm:mb-2">AI-Ready Intelligence</h3>
               <p className="text-sm sm:text-base text-slate-600">Structured knowledge powers AI agents and automation</p>
             </motion.div>
           </div>
@@ -636,13 +636,13 @@ export default function Home() {
         ></div>
 
         {/* Progressive gradient overlay - lighter at top, darker at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-gray-900/80 to-black/90 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-gray-900/60 to-black/70 pointer-events-none"></div>
 
         {/* Pilot Section Content */}
         <div id="pilot" className="relative py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-4 sm:mb-6"
+              className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -669,7 +669,7 @@ export default function Home() {
             >
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8 text-left mb-6 sm:mb-8">
                 <div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4">What You Get</h3>
+                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal mb-3 sm:mb-4">What You Get</h3>
                   <ul className="space-y-2 sm:space-y-3 text-gray-200 text-sm sm:text-base">
                     <li className="flex items-start gap-2 sm:gap-3">
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-tacivo-orange mt-0.5 sm:mt-1 flex-shrink-0" />
@@ -694,7 +694,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-3 sm:mb-4">Timeline</h3>
+                  <h3 className="font-serif text-lg sm:text-xl md:text-2xl font-normal mb-3 sm:mb-4">Timeline</h3>
                   <ul className="space-y-2 sm:space-y-3 text-gray-200 text-sm sm:text-base">
                     <li className="flex items-start gap-2 sm:gap-3">
                       <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-tacivo-purple flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-1">
@@ -758,7 +758,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Product</h3>
+                <h3 className="font-serif text-sm sm:text-base font-normal text-white mb-3 sm:mb-4">Product</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li><a href="#how-it-works" className="text-gray-400 hover:text-tacivo-purple transition-colors text-xs sm:text-sm">How it Works</a></li>
                   <li><a href="#benefits" className="text-gray-400 hover:text-tacivo-purple transition-colors text-xs sm:text-sm">Benefits</a></li>
@@ -767,7 +767,7 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-sm sm:text-base font-semibold text-white mb-3 sm:mb-4">Contact</h3>
+                <h3 className="font-serif text-sm sm:text-base font-normal text-white mb-3 sm:mb-4">Contact</h3>
                 <ul className="space-y-2 sm:space-y-3">
                   <li>
                     <a href="mailto:hello@tacivo.com" className="text-gray-400 hover:text-tacivo-orange transition-colors text-xs sm:text-sm">
