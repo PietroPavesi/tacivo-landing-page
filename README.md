@@ -13,7 +13,7 @@ Tacivo transforms organizational tacit knowledge into structured, searchable AI-
 - **Styling**: Tailwind CSS 3.4.1
 - **Animations**: Framer Motion 12.23.24
 - **Icons**: Lucide React 0.344.0
-- **Font**: Inter (via next/font/google for optimal loading)
+- **Fonts**: Merriweather (titles) & Inter (body) via next/font/google for optimal loading
 
 ## Design System
 
@@ -28,9 +28,11 @@ Orange Dark: #8f3528
 
 ### Typography
 
-- **Headlines**: 48-72px, Inter font, -0.02em letter-spacing
-- **Body**: 18-20px, Inter font, -0.01em letter-spacing
-- **Font Weight**: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
+- **Headlines/Titles**: Merriweather serif font (weights: 400, 700, 900)
+  - Large headlines: 48-72px with -0.02em letter-spacing
+- **Body Text**: Inter sans-serif font (weights: 400, 500, 600, 700)
+  - Body: 18-20px with -0.01em letter-spacing
+- Both fonts optimized via next/font/google for optimal loading
 
 ### Animations
 
