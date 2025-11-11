@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     // Create a conversation summary for Claude
     const conversationText = messages
-      .map((m: any) => `${m.role === 'user' ? 'Expert' : 'Interviewer'}: ${m.content}`)
+      .map((m: { role: string; content: string }) => `${m.role === 'user' ? 'Expert' : 'Interviewer'}: ${m.content}`)
       .join('\n\n');
 
     const documentPrompt = `You are creating a practical knowledge transfer document based on an interview with ${context.expertName}, a ${context.role} with ${context.yearsOfExperience} years of experience in ${context.processToDocument}.

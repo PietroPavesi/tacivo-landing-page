@@ -106,7 +106,7 @@ export default function InterviewPage() {
                   { role: 'assistant', content: assistantMessage },
                 ]);
               }
-            } catch (e) {
+            } catch {
               // Skip invalid JSON
             }
           }
@@ -173,7 +173,7 @@ export default function InterviewPage() {
                 assistantMessage += parsed.text;
                 setMessages([...newMessages, { role: 'assistant', content: assistantMessage }]);
               }
-            } catch (e) {
+            } catch {
               // Skip invalid JSON
             }
           }
