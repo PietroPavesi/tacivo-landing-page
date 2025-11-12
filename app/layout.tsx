@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Merriweather } from 'next/font/google';
 import './globals.css';
 
@@ -40,12 +40,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: '#0f172a',
   openGraph: {
     siteName: 'Tacivo',
     locale: 'en_US',
@@ -75,10 +69,16 @@ export const metadata: Metadata = {
     images: ['https://tacivo.com/assets/og-image.png'],
   },
   icons: {
-    icon: '/assets/16.png',
+    icon: '/assets/loop-logos/loop-favicon.png',
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#0f172a',
+};
 
 export default function RootLayout({
   children,
