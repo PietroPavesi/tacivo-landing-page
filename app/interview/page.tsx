@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import jsPDF from 'jspdf';
+import { VoiceControls } from '@/components/VoiceControls';
+import { useVoiceControls } from '@/hooks/useVoiceControls';
 
 type Message = {
   role: 'user' | 'assistant';
@@ -34,6 +36,8 @@ export default function InterviewPage() {
   const [isGeneratingDoc, setIsGeneratingDoc] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  const { playText } = useVoiceControls();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -179,6 +183,7 @@ export default function InterviewPage() {
           }
         }
       }
+
     } catch (error) {
       console.error('Error sending message:', error);
       alert('Failed to send message. Please try again.');
@@ -265,6 +270,14 @@ export default function InterviewPage() {
     });
     setMessages([]);
     setGeneratedDocument('');
+  };
+
+  const handlePlayLastMessage = () => {
+    // Find the last assistant message
+    const lastAssistantMessage = [...messages].reverse().find(m => m.role === 'assistant');
+    if (lastAssistantMessage) {
+      playText(lastAssistantMessage.content);
+    }
   };
 
   return (
@@ -424,14 +437,20 @@ export default function InterviewPage() {
             {/* Input Area */}
             <div className="border-t border-gray-200 p-4">
               <div className="flex space-x-4">
+                <VoiceControls
+                  onTranscription={(text) => setInputMessage(text)}
+                  onPlayLastMessage={handlePlayLastMessage}
+                  disabled={isLoading}
+                  hasMessages={messages.some(m => m.role === 'assistant')}
+                />
                 <input
                   type="text"
                   value={inputMessage}
                   onChange={(e) => setInputMessage(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
+                  onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && sendMessage()}
                   disabled={isLoading}
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#A855F7] focus:border-transparent outline-none transition disabled:opacity-50"
-                  placeholder="Type your response..."
+                  placeholder="Type your response or use voice..."
                 />
                 <button
                   onClick={sendMessage}
