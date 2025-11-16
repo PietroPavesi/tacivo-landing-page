@@ -4,6 +4,7 @@ export function useVoiceControls() {
   const [isRecording, setIsRecording] = useState(false);
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(false);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
@@ -129,13 +130,19 @@ export function useVoiceControls() {
     }
   }, []);
 
+  const toggleAutoPlay = useCallback(() => {
+    setAutoPlayEnabled(prev => !prev);
+  }, []);
+
   return {
     isRecording,
     isTranscribing,
     isPlaying,
+    autoPlayEnabled,
     startRecording,
     stopRecording,
     playText,
     stopPlayback,
+    toggleAutoPlay,
   };
 }

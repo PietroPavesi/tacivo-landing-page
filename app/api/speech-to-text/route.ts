@@ -26,8 +26,18 @@ export async function POST(req: NextRequest) {
       modelId: 'scribe_v1',
     });
 
+    // Handle both single-channel and multi-channel responses
+    let text = '';
+    if ('text' in transcription) {
+      // Single channel response (SpeechToTextChunkResponseModel)
+      text = transcription.text;
+    } else if ('transcripts' in transcription && transcription.transcripts.length > 0) {
+      // Multi-channel response (MultichannelSpeechToTextResponseModel)
+      text = transcription.transcripts[0].text;
+    }
+
     return new Response(
-      JSON.stringify({ text: transcription.text }),
+      JSON.stringify({ text }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {

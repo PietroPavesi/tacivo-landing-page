@@ -37,7 +37,7 @@ export default function InterviewPage() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  const { playText } = useVoiceControls();
+  const voiceControls = useVoiceControls();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -184,6 +184,10 @@ export default function InterviewPage() {
         }
       }
 
+      // Auto-play AI response if enabled
+      if (voiceControls.autoPlayEnabled && assistantMessage) {
+        await voiceControls.playText(assistantMessage);
+      }
     } catch (error) {
       console.error('Error sending message:', error);
       alert('Failed to send message. Please try again.');
@@ -276,7 +280,7 @@ export default function InterviewPage() {
     // Find the last assistant message
     const lastAssistantMessage = [...messages].reverse().find(m => m.role === 'assistant');
     if (lastAssistantMessage) {
-      playText(lastAssistantMessage.content);
+      voiceControls.playText(lastAssistantMessage.content);
     }
   };
 
@@ -442,6 +446,7 @@ export default function InterviewPage() {
                   onPlayLastMessage={handlePlayLastMessage}
                   disabled={isLoading}
                   hasMessages={messages.some(m => m.role === 'assistant')}
+                  voiceControls={voiceControls}
                 />
                 <input
                   type="text"

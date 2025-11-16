@@ -5,29 +5,33 @@ interface VoiceControlsProps {
   onPlayLastMessage: () => void;
   disabled?: boolean;
   hasMessages?: boolean;
+  voiceControls: ReturnType<typeof useVoiceControls>;
 }
 
 export function VoiceControls({
   onTranscription,
   onPlayLastMessage,
   disabled = false,
-  hasMessages = false
+  hasMessages = false,
+  voiceControls
 }: VoiceControlsProps) {
   const {
     isRecording,
     isTranscribing,
     isPlaying,
+    autoPlayEnabled,
     startRecording,
     stopRecording,
     stopPlayback,
-  } = useVoiceControls();
+    toggleAutoPlay,
+  } = voiceControls;
 
   const handleMicClick = async () => {
     if (isRecording) {
       try {
         const text = await stopRecording();
         onTranscription(text);
-      } catch (error) {
+      } catch {
         alert('Failed to transcribe audio. Please try again.');
       }
     } else {
@@ -41,6 +45,10 @@ export function VoiceControls({
     } else {
       onPlayLastMessage();
     }
+  };
+
+  const handleAutoPlayClick = () => {
+    toggleAutoPlay();
   };
 
   return (
@@ -91,6 +99,26 @@ export function VoiceControls({
         )}
       </button>
 
+      {/* Auto-play Toggle Button */}
+      <button
+        onClick={handleAutoPlayClick}
+        disabled={disabled}
+        className={`p-3 rounded-lg transition ${
+          autoPlayEnabled
+            ? 'bg-[#F97316] hover:bg-[#EA580C] text-white'
+            : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+        } disabled:opacity-50 disabled:cursor-not-allowed`}
+        title={autoPlayEnabled ? 'Auto-play enabled' : 'Auto-play disabled'}
+      >
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          {autoPlayEnabled ? (
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+          ) : (
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" opacity="0.5" />
+          )}
+        </svg>
+      </button>
+
       {/* Status Indicator */}
       {isRecording && (
         <span className="text-xs text-red-600 font-medium">Recording...</span>
@@ -100,6 +128,9 @@ export function VoiceControls({
       )}
       {isPlaying && (
         <span className="text-xs text-[#5B21B6] font-medium">Playing...</span>
+      )}
+      {autoPlayEnabled && !isPlaying && (
+        <span className="text-xs text-[#F97316] font-medium">Auto-play ON</span>
       )}
     </div>
   );
