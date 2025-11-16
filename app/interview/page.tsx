@@ -125,7 +125,11 @@ export default function InterviewPage() {
         },
       ];
 
-      const response = await fetch('/api/chat', {
+      const apiEndpoint = context.documentType === 'case-study'
+        ? '/api/chat-case-study'
+        : '/api/chat-best-practices';
+
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -212,7 +216,11 @@ export default function InterviewPage() {
     try {
       const processToDocument = `${context.documentType === 'case-study' ? 'Case Study' : 'Best Practices Guide'}: ${context.description}`;
 
-      const response = await fetch('/api/chat', {
+      const apiEndpoint = context.documentType === 'case-study'
+        ? '/api/chat-case-study'
+        : '/api/chat-best-practices';
+
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -279,7 +287,11 @@ export default function InterviewPage() {
     try {
       const processToDocument = `${context.documentType === 'case-study' ? 'Case Study' : 'Best Practices Guide'}: ${context.description}`;
 
-      const response = await fetch('/api/generate-doc', {
+      const apiEndpoint = context.documentType === 'case-study'
+        ? '/api/generate-doc-case-study'
+        : '/api/generate-doc-best-practices';
+
+      const response = await fetch(apiEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -410,7 +422,7 @@ export default function InterviewPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="text-center mb-12">
-                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-slate-900 mb-4">
+                <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-normal tracking-tight text-slate-900 mb-4">
                   Turn your expertise into professional documentation in{' '}
                   <span className="text-tacivo-orange">15 minutes</span>
                 </h1>
@@ -717,7 +729,7 @@ export default function InterviewPage() {
                     <div
                       className={`max-w-[80%] rounded-2xl p-5 ${
                         message.role === 'user'
-                          ? 'bg-gradient-to-r from-tacivo-purple to-tacivo-orange text-white'
+                          ? 'bg-orange-50 text-gray-900 border border-orange-100'
                           : 'bg-white border border-gray-200 text-gray-900 shadow-sm'
                       }`}
                     >
