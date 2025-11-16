@@ -4,6 +4,7 @@ export function useVoiceControls() {
   const [isRecording, setIsRecording] = useState(false);
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isGeneratingSpeech, setIsGeneratingSpeech] = useState(false);
   const [autoPlayEnabled, setAutoPlayEnabled] = useState(false);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -85,7 +86,7 @@ export function useVoiceControls() {
         currentAudioRef.current = null;
       }
 
-      setIsPlaying(true);
+      setIsGeneratingSpeech(true);
 
       const response = await fetch('/api/text-to-speech', {
         method: 'POST',
@@ -98,6 +99,9 @@ export function useVoiceControls() {
       }
 
       const audioBlob = await response.blob();
+      setIsGeneratingSpeech(false);
+      setIsPlaying(true);
+
       const audioUrl = URL.createObjectURL(audioBlob);
       const audio = new Audio(audioUrl);
 
@@ -118,6 +122,7 @@ export function useVoiceControls() {
       await audio.play();
     } catch (error) {
       console.error('Playback error:', error);
+      setIsGeneratingSpeech(false);
       setIsPlaying(false);
     }
   }, []);
@@ -138,6 +143,7 @@ export function useVoiceControls() {
     isRecording,
     isTranscribing,
     isPlaying,
+    isGeneratingSpeech,
     autoPlayEnabled,
     startRecording,
     stopRecording,

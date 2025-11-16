@@ -18,12 +18,8 @@ export function VoiceControls({
   const {
     isRecording,
     isTranscribing,
-    isPlaying,
-    autoPlayEnabled,
     startRecording,
     stopRecording,
-    stopPlayback,
-    toggleAutoPlay,
   } = voiceControls;
 
   const handleMicClick = async () => {
@@ -39,35 +35,28 @@ export function VoiceControls({
     }
   };
 
-  const handleSpeakerClick = () => {
-    if (isPlaying) {
-      stopPlayback();
-    } else {
-      onPlayLastMessage();
-    }
-  };
-
-  const handleAutoPlayClick = () => {
-    toggleAutoPlay();
-  };
-
   return (
-    <div className="flex items-center space-x-2">
-      {/* Microphone Button */}
+    <div className="relative">
       <button
         onClick={handleMicClick}
         disabled={disabled || isTranscribing}
-        className={`p-3 rounded-lg transition ${
+        className={`p-2 rounded-lg transition-all ${
           isRecording
-            ? 'bg-red-500 hover:bg-red-600 text-white animate-pulse'
-            : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
+            ? 'text-red-500 bg-red-50 scale-110'
+            : isTranscribing
+            ? 'text-purple-500'
+            : 'text-[#7c3aed] opacity-90 hover:opacity-100 hover:scale-110 hover:bg-purple-50'
         } disabled:opacity-50 disabled:cursor-not-allowed`}
-        title={isRecording ? 'Stop recording' : 'Start recording'}
+        title={isRecording ? 'Click to stop recording' : 'Start recording'}
       >
         {isTranscribing ? (
           <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+          </svg>
+        ) : isRecording ? (
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <rect x="6" y="6" width="12" height="12" rx="2" />
           </svg>
         ) : (
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -76,61 +65,13 @@ export function VoiceControls({
           </svg>
         )}
       </button>
-
-      {/* Speaker Button */}
-      <button
-        onClick={handleSpeakerClick}
-        disabled={disabled || !hasMessages}
-        className={`p-3 rounded-lg transition ${
-          isPlaying
-            ? 'bg-[#5B21B6] hover:bg-[#4C1D95] text-white'
-            : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-        } disabled:opacity-50 disabled:cursor-not-allowed`}
-        title={isPlaying ? 'Stop playback' : 'Play last AI message'}
-      >
-        {isPlaying ? (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-          </svg>
-        ) : (
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
-          </svg>
-        )}
-      </button>
-
-      {/* Auto-play Toggle Button */}
-      <button
-        onClick={handleAutoPlayClick}
-        disabled={disabled}
-        className={`p-3 rounded-lg transition ${
-          autoPlayEnabled
-            ? 'bg-[#F97316] hover:bg-[#EA580C] text-white'
-            : 'bg-gray-100 hover:bg-gray-200 text-gray-700'
-        } disabled:opacity-50 disabled:cursor-not-allowed`}
-        title={autoPlayEnabled ? 'Auto-play enabled' : 'Auto-play disabled'}
-      >
-        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-          {autoPlayEnabled ? (
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
-          ) : (
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" opacity="0.5" />
-          )}
-        </svg>
-      </button>
-
-      {/* Status Indicator */}
       {isRecording && (
-        <span className="text-xs text-red-600 font-medium">Recording...</span>
-      )}
-      {isTranscribing && (
-        <span className="text-xs text-gray-600 font-medium">Transcribing...</span>
-      )}
-      {isPlaying && (
-        <span className="text-xs text-[#5B21B6] font-medium">Playing...</span>
-      )}
-      {autoPlayEnabled && !isPlaying && (
-        <span className="text-xs text-[#F97316] font-medium">Auto-play ON</span>
+        <div className="absolute -top-1 -right-1">
+          <span className="flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+          </span>
+        </div>
       )}
     </div>
   );
