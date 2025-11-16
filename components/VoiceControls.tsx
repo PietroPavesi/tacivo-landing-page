@@ -2,17 +2,13 @@ import { useVoiceControls } from '@/hooks/useVoiceControls';
 
 interface VoiceControlsProps {
   onTranscription: (text: string) => void;
-  onPlayLastMessage: () => void;
   disabled?: boolean;
-  hasMessages?: boolean;
   voiceControls: ReturnType<typeof useVoiceControls>;
 }
 
 export function VoiceControls({
   onTranscription,
-  onPlayLastMessage,
   disabled = false,
-  hasMessages = false,
   voiceControls
 }: VoiceControlsProps) {
   const {

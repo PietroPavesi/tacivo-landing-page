@@ -132,7 +132,9 @@ export default function InterviewPage() {
     }
 
     setStep('chat');
+    setStep('chat'); // Move to chat immediately to show loading state
     setIsLoading(true);
+    setIsTyping(true);
 
     // Build process description including document type and description
     const processToDocument = `${context.documentType === 'case-study' ? 'Case Study' : 'Best Practices Guide'}: ${context.description}`;
@@ -169,8 +171,6 @@ export default function InterviewPage() {
       const decoder = new TextDecoder();
       let assistantMessage = '';
 
-      setIsTyping(true);
-
       while (true) {
         const { done, value } = await reader!.read();
         if (done) break;
@@ -183,8 +183,8 @@ export default function InterviewPage() {
             const data = line.slice(6);
             if (data === '[DONE]') {
               setIsTyping(false);
+              // Don't show the initial user message, only the assistant's first question
               setMessages([
-                initialMessages[0],
                 { role: 'assistant', content: assistantMessage },
               ]);
               break;
@@ -194,8 +194,8 @@ export default function InterviewPage() {
               const parsed = JSON.parse(data);
               if (parsed.text) {
                 assistantMessage += parsed.text;
+                // Show streaming assistant message without the initial user message
                 setMessages([
-                  initialMessages[0],
                   { role: 'assistant', content: assistantMessage },
                 ]);
               }
@@ -897,9 +897,7 @@ export default function InterviewPage() {
                   <div className="absolute left-4 bottom-3">
                     <VoiceControls
                       onTranscription={(text) => setInputMessage(text)}
-                      onPlayLastMessage={handlePlayLastMessage}
                       disabled={isLoading}
-                      hasMessages={messages.some(m => m.role === 'assistant')}
                       voiceControls={voiceControls}
                     />
                   </div>
