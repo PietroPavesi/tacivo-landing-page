@@ -40,16 +40,23 @@ module.exports = {
         },
       },
       fontFamily: {
-        'serif': ['var(--font-merriweather)', 'Georgia', 'serif'],
         'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
       },
       colors: {
         'tacivo': {
           'purple': '#b974f4',
           'purple-dark': '#5d3d89',
+          'purple-darker': '#3d2859',
           'orange': '#ff6b4a',
           'orange-dark': '#8f3528',
+          'orange-darker': '#6b2619',
         }
+      },
+      boxShadow: {
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'soft-lg': '0 10px 40px -10px rgba(0, 0, 0, 0.1), 0 2px 10px -2px rgba(0, 0, 0, 0.05)',
+        'soft-xl': '0 20px 50px -12px rgba(0, 0, 0, 0.15), 0 8px 16px -8px rgba(0, 0, 0, 0.08)',
       },
     },
   },
