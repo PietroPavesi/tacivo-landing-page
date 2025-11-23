@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     images: ['https://tacivo.com/assets/og-image.png'],
   },
   icons: {
-    icon: '/assets/loop-logos/loop-favicon.png',
+    icon: '/assets/logo/png_bg/14.png',
   },
 };
 

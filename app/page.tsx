@@ -35,7 +35,7 @@ export default function Home() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <img src="/assets/loop-logos/loop-logo.svg" alt="Tacivo" className="h-10" />
+              <img src="/assets/logo/svg/12.svg" alt="Tacivo" className="h-10" />
             </motion.div>
 
             {/* Desktop Menu */}
@@ -332,7 +332,7 @@ export default function Home() {
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="mb-4 sm:mb-6">
-                <img src="/assets/loop-logos/loop-logo-AI.svg" alt="tacivo AI" className="h-10 sm:h-12" />
+                <img src="/assets/logo/svg/10.svg" alt="tacivo AI" className="h-10 sm:h-12 -ml-2 sm:-ml-4" />
               </div>
               <p className="text-base sm:text-lg text-slate-600 mb-4 sm:mb-6 leading-relaxed">
                 AI-guided conversations that capture tacit knowledge in 30-minute sessions, generating valuable documentation.
@@ -365,7 +365,7 @@ export default function Home() {
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <div className="mb-4 sm:mb-6">
-                <img src="/assets/loop-logos/loop-logo-KB.svg" alt="tacivo KB" className="h-10 sm:h-12" />
+                <img src="/assets/logo/svg/11.svg" alt="tacivo KB" className="h-10 sm:h-12 -ml-2 sm:-ml-4" />
               </div>
               <p className="text-base sm:text-lg text-slate-600 mb-4 sm:mb-6 leading-relaxed">
                 A living knowledge system that scales with your organization. Searchable, actionable, and enterprise-ready.
@@ -752,7 +752,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16">
               <div className="sm:col-span-2">
-                <img src="/assets/loop-logos/loop-logo-white.svg" alt="Tacivo" className="h-8 sm:h-10 mb-4 sm:mb-5" />
+                <img src="/assets/logo/svg/13.svg" alt="Tacivo" className="h-8 sm:h-10 mb-4 sm:mb-5 -ml-2 sm:-ml-10" />
                 <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md">
                   Transform expert knowledge into institutional intelligence. Preserve critical expertise and build defensible competitive advantage.
                 </p>
