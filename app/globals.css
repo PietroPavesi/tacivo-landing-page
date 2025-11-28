@@ -1,43 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* Light mode - Ivory palette */
+    --background: 60 30% 97%; /* Ivory Light #FAFAF7 */
+    --foreground: 60 2% 10%; /* Slate Dark #191919 */
 
-/* Add your selection color here */
-::selection {
-  background: #b974f4; /* tacivo purple */
-  color: white;
+    --card: 60 17% 93%; /* Ivory Medium #F0F0EB */
+    --card-foreground: 60 2% 10%; /* Slate Dark */
+
+    --popover: 60 30% 97%; /* Ivory Light */
+    --popover-foreground: 60 2% 10%; /* Slate Dark */
+
+    --primary: 60 2% 10%; /* Slate Dark #191919 */
+    --primary-foreground: 60 30% 97%; /* Ivory Light */
+
+    --secondary: 50 15% 89%; /* Ivory Dark #E5E4DF */
+    --secondary-foreground: 60 2% 10%; /* Slate Dark */
+
+    --muted: 60 4% 74%; /* Cloud Light #BFBFBA */
+    --muted-foreground: 60 2% 40%; /* Cloud Dark #666663 */
+
+    --accent: 15 52% 58%; /* Book Cloth #CC785C */
+    --accent-foreground: 60 30% 97%; /* Ivory Light */
+
+    --destructive: 5 50% 51%; /* Error #BF4D43 */
+    --destructive-foreground: 60 30% 97%;
+
+    --border: 50 15% 89%; /* Ivory Dark */
+    --input: 60 4% 74%; /* Cloud Light */
+    --ring: 60 2% 10%; /* Slate Dark */
+
+    --radius: 0.5rem;
+
+    /* Dark section colors - Slate palette */
+    --dark-bg: 60 2% 10%; /* Slate Dark #191919 */
+    --dark-card: 60 2% 15%; /* Slate Medium #262625 */
+    --dark-border: 60 2% 25%; /* Slate Light #40403E */
+    --dark-muted: 60 2% 40%; /* Cloud Dark #666663 */
+
+    /* Warm accent colors */
+    --book-cloth: 15 52% 58%; /* #CC785C */
+    --kraft: 26 50% 66%; /* #D4A27F */
+    --manilla: 38 56% 83%; /* #EBDBBC */
+    --focus: 15 52% 58%; /* Book Cloth #CC785C */
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+
+    --sidebar-background: 60 30% 97%;
+    --sidebar-foreground: 60 2% 25%;
+    --sidebar-primary: 60 2% 10%;
+    --sidebar-primary-foreground: 60 30% 97%;
+    --sidebar-accent: 50 15% 89%;
+    --sidebar-accent-foreground: 60 2% 10%;
+    --sidebar-border: 50 15% 89%;
+    --sidebar-ring: 210 83% 67%;
+  }
+
+  .dark {
+    /* Dark mode - Slate palette */
+    --background: 60 2% 10%; /* Slate Dark #191919 */
+    --foreground: 60 30% 97%; /* Ivory Light */
+    --card: 60 2% 15%; /* Slate Medium #262625 */
+    --card-foreground: 60 30% 97%;
+    --popover: 60 2% 15%;
+    --popover-foreground: 60 30% 97%;
+    --primary: 60 30% 97%; /* Ivory Light */
+    --primary-foreground: 60 2% 10%; /* Slate Dark */
+    --secondary: 60 2% 25%; /* Slate Light #40403E */
+    --secondary-foreground: 60 30% 97%;
+    --muted: 60 2% 25%; /* Slate Light */
+    --muted-foreground: 60 2% 56%; /* Cloud Medium */
+    --accent: 15 52% 58%; /* Book Cloth */
+    --accent-foreground: 60 30% 97%;
+    --destructive: 5 50% 51%; /* Error */
+    --destructive-foreground: 60 30% 97%;
+    --border: 60 2% 25%; /* Slate Light */
+    --input: 60 2% 25%;
+    --ring: 60 30% 97%;
+    --sidebar-background: 60 2% 10%;
+    --sidebar-foreground: 60 30% 97%;
+    --sidebar-primary: 15 52% 58%;
+    --sidebar-primary-foreground: 60 30% 97%;
+    --sidebar-accent: 60 2% 25%;
+    --sidebar-accent-foreground: 60 30% 97%;
+    --sidebar-border: 60 2% 25%;
+    --sidebar-ring: 210 83% 67%;
+  }
 }
-
-::-moz-selection { /* Firefox support */
-  background: #b974f4;
-  color: white;
-}
-
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    letter-spacing: -0.01em;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: -0.02em;
+  ::selection {
+    background-color: hsl(var(--book-cloth) / 0.5);
+    color: hsl(var(--foreground));
+  }
+
+  ::-moz-selection {
+    background-color: hsl(var(--book-cloth) / 0.5);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  /* Dark section styling */
+  .section-dark {
+    background-color: hsl(60 2% 10%);
+    color: hsl(60 30% 97%);
+  }
+
+  .section-dark .text-foreground {
+    color: hsl(60 30% 97%);
+  }
+
+  .section-dark .text-muted-foreground {
+    color: hsl(60 2% 56%);
+  }
+
+  .section-dark .border-border {
+    border-color: hsl(60 2% 25%);
+  }
+
+  .section-dark .bg-card {
+    background-color: hsl(60 2% 15%);
+  }
+
+  .section-dark .bg-secondary {
+    background-color: hsl(60 2% 15%);
   }
 }
 
 @layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-1 {
+    animation: fadeIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+  }
+
+  /* Book Cloth border hover effect - light mode */
+  .gradient-border-pastel {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .gradient-border-pastel:hover {
+    border-color: hsl(15 52% 58%); /* Book Cloth */
+  }
+
+  /* Book Cloth border hover effect - dark sections */
+  .gradient-border-pastel-dark {
+    position: relative;
+    background: hsl(60 2% 15%);
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .gradient-border-pastel-dark:hover {
+    border-color: hsl(15 52% 58%); /* Book Cloth */
+  }
+
+  /* Book Cloth border for cards */
+  .book-cloth-border {
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .book-cloth-border:hover {
+    border-color: hsl(15 52% 58%); /* Book Cloth */
+  }
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

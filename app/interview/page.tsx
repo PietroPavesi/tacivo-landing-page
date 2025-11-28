@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import jsPDF from 'jspdf';
 import { VoiceControls } from '@/components/VoiceControls';
 import { useVoiceControls } from '@/hooks/useVoiceControls';
-import { ArrowLeft, Upload, X, FileText } from 'lucide-react';
+import { ArrowLeft, Upload, X, FileText, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 type Message = {
@@ -407,13 +407,13 @@ export default function InterviewPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+      <header className="fixed w-full top-0 z-50 bg-slate-dark border-b border-slate-light">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex items-center">
-              <img src="/assets/loop-logos/loop-logo.svg" alt="Tacivo" className="h-10" />
+          <div className="flex justify-between items-center h-16 lg:h-20">
+            <div className="flex items-center w-[140px]">
+              <img src="/assets/logo/svg/13.svg" alt="Tacivo" className="h-20" />
             </div>
             {step !== 'initial' && (
               <button
@@ -421,7 +421,7 @@ export default function InterviewPage() {
                   if (step === 'context') setStep('initial');
                   else if (step === 'chat') setStep('context');
                 }}
-                className="text-sm text-gray-600 hover:text-tacivo-purple transition-colors flex items-center gap-2"
+                className="text-sm text-cloud-medium hover:text-ivory-light transition-colors flex items-center gap-2"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back
@@ -431,30 +431,30 @@ export default function InterviewPage() {
         </div>
       </header>
 
-      <main className="pt-20">
+      <main className="pt-16 lg:pt-20">
         {/* STEP 1: Initial Form */}
         {step === 'initial' && (
-          <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+          <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-6">
             <motion.div
               className="max-w-3xl w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="text-center mb-12">
-                <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-normal tracking-tight text-slate-900 mb-4">
+              <div className="text-center mb-6">
+                <h1 className="font-serif text-xl sm:text-2xl md:text-3xl font-normal tracking-tight text-slate-900 mb-3">
                   Turn your expertise into professional documentation in{' '}
-                  <span className="text-tacivo-orange">15 minutes</span>
+                  <span className="text-book-cloth">15 minutes</span>
                 </h1>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/60 shadow-lg">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/60 shadow-lg">
                 {/* About You Section */}
-                <div className="mb-8">
-                  <h2 className="font-serif text-2xl font-normal text-slate-900 mb-6">
+                <div className="mb-6">
+                  <h2 className="font-serif text-xl font-normal text-slate-900 mb-4">
                     Step 1: About You
                   </h2>
-                  <div className="space-y-5">
+                  <div className="space-y-4">
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">
                         Full Name
@@ -463,7 +463,7 @@ export default function InterviewPage() {
                         type="text"
                         value={context.expertName}
                         onChange={(e) => setContext({ ...context, expertName: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tacivo-purple focus:border-transparent outline-none transition"
+                        className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-book-cloth focus:border-transparent outline-none transition bg-background"
                         placeholder="e.g., Sarah Johnson"
                       />
                     </div>
@@ -475,7 +475,7 @@ export default function InterviewPage() {
                         type="text"
                         value={context.role}
                         onChange={(e) => setContext({ ...context, role: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tacivo-purple focus:border-transparent outline-none transition"
+                        className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-book-cloth focus:border-transparent outline-none transition bg-background"
                         placeholder="e.g., Senior Sales Manager, Cloud Architect"
                       />
                     </div>
@@ -487,7 +487,7 @@ export default function InterviewPage() {
                         type="number"
                         value={context.yearsOfExperience}
                         onChange={(e) => setContext({ ...context, yearsOfExperience: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tacivo-purple focus:border-transparent outline-none transition"
+                        className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-book-cloth focus:border-transparent outline-none transition bg-background"
                         placeholder="e.g., 10"
                         min="0"
                       />
@@ -497,20 +497,22 @@ export default function InterviewPage() {
 
                 {/* Document Type Selection */}
                 <div>
-                  <h2 className="font-serif text-2xl font-normal text-slate-900 mb-3">
+                  <h2 className="font-serif text-xl font-normal text-slate-900 mb-3">
                     Step 2: What Do You Want to Create?
                   </h2>
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
                     <button
                       onClick={() => handleDocumentTypeSelect('case-study')}
-                      className={`text-left p-6 rounded-2xl border-2 transition-all ${
+                      className={`text-left p-5 rounded-2xl border-2 transition-all ${
                         context.documentType === 'case-study'
-                          ? 'border-tacivo-purple bg-tacivo-purple/5'
-                          : 'border-gray-200 hover:border-tacivo-purple/50'
+                          ? 'border-book-cloth bg-book-cloth/5'
+                          : 'border-border hover:border-book-cloth/50'
                       }`}
                     >
-                      <div className="text-4xl mb-3">📋</div>
-                      <h3 className="font-serif text-xl font-normal text-slate-900 mb-2">
+                      <div className="w-10 h-10 rounded-lg bg-book-cloth/10 flex items-center justify-center mb-3">
+                        <FileText className="w-5 h-5 text-book-cloth" />
+                      </div>
+                      <h3 className="font-serif text-lg font-normal text-slate-900 mb-2">
                         Case Study
                       </h3>
                       <p className="text-sm text-slate-600 mb-2">
@@ -523,14 +525,16 @@ export default function InterviewPage() {
 
                     <button
                       onClick={() => handleDocumentTypeSelect('best-practices')}
-                      className={`text-left p-6 rounded-2xl border-2 transition-all ${
+                      className={`text-left p-5 rounded-2xl border-2 transition-all ${
                         context.documentType === 'best-practices'
-                          ? 'border-tacivo-orange bg-tacivo-orange/5'
-                          : 'border-gray-200 hover:border-tacivo-orange/50'
+                          ? 'border-book-cloth bg-book-cloth/5'
+                          : 'border-border hover:border-book-cloth/50'
                       }`}
                     >
-                      <div className="text-4xl mb-3">📖</div>
-                      <h3 className="font-serif text-xl font-normal text-slate-900 mb-2">
+                      <div className="w-10 h-10 rounded-lg bg-book-cloth/10 flex items-center justify-center mb-3">
+                        <FileText className="w-5 h-5 text-book-cloth" />
+                      </div>
+                      <h3 className="font-serif text-lg font-normal text-slate-900 mb-2">
                         Best Practices Guide
                       </h3>
                       <p className="text-sm text-slate-600 mb-2">
@@ -545,8 +549,7 @@ export default function InterviewPage() {
                   <button
                     onClick={proceedToContext}
                     disabled={!context.expertName || !context.role || !context.yearsOfExperience || !context.documentType}
-                    className="w-full px-8 py-4 bg-gradient-to-r from-tacivo-purple via-tacivo-orange to-tacivo-purple bg-[length:200%_100%] text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ animation: context.documentType ? 'shimmer 5s linear infinite' : 'none' }}
+                    className="w-full px-8 py-3 bg-book-cloth text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-book-cloth/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Continue
                   </button>
@@ -558,7 +561,7 @@ export default function InterviewPage() {
 
         {/* STEP 2: Context & Upload */}
         {step === 'context' && (
-          <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+          <div className="min-h-[calc(100vh-5rem)] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-6">
             <motion.div
               className="max-w-3xl w-full"
               initial={{ opacity: 0, y: 20 }}
@@ -566,11 +569,11 @@ export default function InterviewPage() {
               transition={{ duration: 0.6 }}
             >
               {/* Header */}
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-tacivo-purple/10 to-tacivo-orange/10 rounded-full mb-4">
-                  <span className="text-3xl">
-                    {context.documentType === 'case-study' ? '📋' : '📖'}
-                  </span>
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-book-cloth/10 rounded-full mb-4">
+                  <div className="w-8 h-8 rounded-lg bg-book-cloth/20 flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-book-cloth" />
+                  </div>
                   <span className="font-medium text-slate-900">
                     Creating Your {context.documentType === 'case-study' ? 'Case Study' : 'Best Practices Guide'}
                   </span>
@@ -580,16 +583,16 @@ export default function InterviewPage() {
                 </p>
                 <div className="mt-6 flex items-center justify-center gap-2 text-sm text-slate-500">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-tacivo-purple"></div>
+                    <div className="w-2 h-2 rounded-full bg-book-cloth"></div>
                     <span>Step 2 of 3</span>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/60 shadow-lg space-y-8">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/60 shadow-lg space-y-6">
                 {/* Description Section */}
                 <div>
-                  <h2 className="font-serif text-xl font-normal text-slate-900 mb-2">
+                  <h2 className="font-serif text-lg font-normal text-slate-900 mb-2">
                     {context.documentType === 'case-study'
                       ? 'Tell us briefly about this project or event'
                       : 'Tell us briefly what this guide should cover'}
@@ -600,8 +603,8 @@ export default function InterviewPage() {
                   <textarea
                     value={context.description}
                     onChange={(e) => setContext({ ...context, description: e.target.value })}
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-tacivo-purple focus:border-transparent outline-none transition resize-none"
+                    rows={4}
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-book-cloth focus:border-transparent outline-none transition resize-none bg-background"
                     placeholder={
                       context.documentType === 'case-study'
                         ? 'e.g., We closed a $500K deal with Enterprise XYZ. It took 6 months and involved custom integration requirements...'
@@ -617,8 +620,8 @@ export default function InterviewPage() {
 
                 {/* File Upload Section */}
                 <div>
-                  <h2 className="font-serif text-xl font-normal text-slate-900 mb-2">
-                    Upload any relevant documents (optional but helpful)
+                  <h2 className="font-serif text-lg font-normal text-slate-900 mb-2">
+                    Upload documents (optional)
                   </h2>
                   <p className="text-sm text-slate-500 mb-4">
                     {context.documentType === 'case-study'
@@ -632,13 +635,13 @@ export default function InterviewPage() {
                     onDragLeave={handleDragLeave}
                     onDrop={handleDrop}
                     onClick={() => fileInputRef.current?.click()}
-                    className={`border-2 border-dashed rounded-2xl p-12 text-center cursor-pointer transition-all ${
+                    className={`border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all ${
                       isDragging
-                        ? 'border-tacivo-purple bg-tacivo-purple/5'
-                        : 'border-gray-300 hover:border-tacivo-purple/50 hover:bg-gray-50'
+                        ? 'border-book-cloth bg-book-cloth/5'
+                        : 'border-border hover:border-book-cloth/50 hover:bg-secondary'
                     }`}
                   >
-                    <Upload className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                    <Upload className="w-10 h-10 mx-auto mb-3 text-gray-400" />
                     <p className="text-slate-700 font-medium mb-2">
                       Drag and drop files here
                     </p>
@@ -666,7 +669,7 @@ export default function InterviewPage() {
                           className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200"
                         >
                           <div className="flex items-center gap-3 flex-1 min-w-0">
-                            <FileText className="w-5 h-5 text-tacivo-purple flex-shrink-0" />
+                            <FileText className="w-5 h-5 text-book-cloth flex-shrink-0" />
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-medium text-slate-900 truncate">
                                 {file.name}
@@ -692,17 +695,16 @@ export default function InterviewPage() {
                 </div>
 
                 {/* Start Button */}
-                <div className="pt-6 border-t border-gray-200">
+                <div className="pt-4 border-t border-gray-200">
                   <button
                     onClick={startInterview}
                     disabled={context.description.length < 50 || isLoading}
-                    className="w-full px-8 py-4 bg-gradient-to-r from-tacivo-purple via-tacivo-orange to-tacivo-purple bg-[length:200%_100%] text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed text-lg"
-                    style={{ animation: context.description.length >= 50 ? 'shimmer 5s linear infinite' : 'none' }}
+                    className="w-full px-8 py-3 bg-book-cloth text-white rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-book-cloth/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isLoading ? 'Preparing your interview...' : 'Start Interview →'}
                   </button>
-                  <p className="text-center text-sm text-slate-500 mt-4">
-                    ⏱️ This will take 15-30 minutes. You can pause anytime.
+                  <p className="text-center text-sm text-slate-500 mt-3">
+                    ⏱️ Takes 15-30 minutes
                   </p>
                 </div>
               </div>
@@ -713,31 +715,34 @@ export default function InterviewPage() {
         {/* STEP 3: Chat Interface */}
         {step === 'chat' && (
           <div className="h-[calc(100vh-5rem)] flex flex-col relative overflow-hidden">
-            {/* Animated Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 via-white to-orange-50/30 pointer-events-none">
-              <div
-                className="absolute inset-0 opacity-30 animate-float"
-                style={{
-                  background: 'radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(251, 146, 60, 0.1) 0%, transparent 50%)'
-                }}
-              />
+            {/* Animated Background - dot grid pattern */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none" style={{ backgroundColor: 'hsl(60 30% 97%)' }}>
+              <div className="absolute bottom-0 right-0 w-2/3 h-full opacity-20">
+                <div
+                  className="w-full h-full"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at 1px 1px, hsl(15 52% 58% / 0.3) 1px, transparent 0)`,
+                    backgroundSize: '32px 32px',
+                  }}
+                />
+              </div>
             </div>
 
             {/* Compact Chat Header */}
-            <div className="relative bg-white/80 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+            <div className="relative bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
               <div className="max-w-[680px] mx-auto px-4 sm:px-6 py-4">
                 {/* Title and End Button */}
                 <div className="flex items-center justify-between mb-3">
                   <div>
-                    <h2 className="text-base font-semibold text-gray-900 mb-1">Interview in Progress</h2>
-                    <p className="text-sm text-gray-600">
+                    <h2 className="text-base font-semibold text-foreground mb-1">Interview in Progress</h2>
+                    <p className="text-sm text-muted-foreground">
                       {context.expertName} • {context.role}
                     </p>
                   </div>
                   <button
                     onClick={endInterview}
                     disabled={isGeneratingDoc || messages.length < 4}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isGeneratingDoc ? 'Generating...' : 'End Interview'}
                   </button>
@@ -745,18 +750,15 @@ export default function InterviewPage() {
 
                 {/* Progress Bar + Question Count */}
                 <div className="flex items-center gap-3">
-                  <div className="flex-1 relative h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="flex-1 relative h-2 bg-secondary rounded-full overflow-hidden">
                     <motion.div
-                      className="absolute inset-y-0 left-0 rounded-full"
-                      style={{
-                        background: 'linear-gradient(90deg, #7c3aed 0%, #a855f7 50%, #fb923c 100%)',
-                      }}
+                      className="absolute inset-y-0 left-0 rounded-full bg-book-cloth"
                       initial={{ width: '0%' }}
                       animate={{ width: `${Math.min((messages.length / 24) * 100, 100)}%` }}
                       transition={{ duration: 0.6, ease: 'easeInOut' }}
                     />
                   </div>
-                  <span className="text-sm text-gray-600 whitespace-nowrap font-medium">
+                  <span className="text-sm text-muted-foreground whitespace-nowrap font-medium">
                     Question {messages.filter(m => m.role === 'assistant').length} of 12
                   </span>
                 </div>
@@ -780,49 +782,41 @@ export default function InterviewPage() {
                     <div className="max-w-[85%] sm:max-w-[75%]">
                       {message.role === 'assistant' && (
                         <div className="flex items-center gap-2 mb-2">
-                          <div
-                            className="text-base"
-                            style={{
-                              background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #fb923c 100%)',
-                              WebkitBackgroundClip: 'text',
-                              WebkitTextFillColor: 'transparent',
-                              backgroundClip: 'text'
-                            }}
-                          >
-                            ∞
+                          <div className="w-6 h-6 rounded-full bg-book-cloth/10 flex items-center justify-center">
+                            <span className="text-xs font-medium text-book-cloth">AI</span>
                           </div>
-                          <span className="text-sm font-medium text-gray-700">Tacivo</span>
+                          <span className="text-sm font-medium text-foreground">Tacivo</span>
                         </div>
                       )}
 
                       <div
                         className={`group relative rounded-2xl p-5 ${
                           message.role === 'user'
-                            ? 'bg-white border border-gray-200 shadow-sm'
-                            : 'bg-purple-50/50 border border-purple-100/50'
+                            ? 'bg-card border border-border shadow-sm'
+                            : 'bg-book-cloth/5 border border-book-cloth/20'
                         }`}
                       >
                         {message.role === 'assistant' && (
                           <button
                             onClick={() => voiceControls.playText(message.content)}
-                            className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-white/80"
+                            className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity p-1.5 rounded-lg hover:bg-background/80"
                             title="Play message"
                           >
                             <span className="text-base">🔊</span>
                           </button>
                         )}
 
-                        <div className="whitespace-pre-wrap text-gray-900 leading-relaxed">
+                        <div className="whitespace-pre-wrap text-foreground leading-relaxed">
                           {message.content}
                         </div>
 
                         {message.role === 'user' && (
                           <div className="text-right mt-2">
-                            <span className="text-sm font-medium text-gray-700">{context.expertName}</span>
+                            <span className="text-sm font-medium text-foreground">{context.expertName}</span>
                           </div>
                         )}
 
-                        <div className="text-xs text-gray-400 mt-2">
+                        <div className="text-xs text-muted-foreground mt-2">
                           Just now
                         </div>
                       </div>
@@ -838,24 +832,16 @@ export default function InterviewPage() {
                   >
                     <div className="max-w-[85%] sm:max-w-[75%]">
                       <div className="flex items-center gap-2 mb-2">
-                        <div
-                          className="text-base animate-speaking-pulse"
-                          style={{
-                            background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #fb923c 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            backgroundClip: 'text'
-                          }}
-                        >
-                          ∞
+                        <div className="w-6 h-6 rounded-full bg-book-cloth/10 flex items-center justify-center animate-speaking-pulse">
+                          <span className="text-xs font-medium text-book-cloth">AI</span>
                         </div>
-                        <span className="text-sm font-medium text-gray-700">Tacivo is thinking...</span>
+                        <span className="text-sm font-medium text-foreground">Tacivo is thinking...</span>
                       </div>
-                      <div className="bg-purple-50/50 border border-purple-100/50 rounded-2xl p-5">
+                      <div className="bg-book-cloth/5 border border-book-cloth/20 rounded-2xl p-5">
                         <div className="flex space-x-1.5">
-                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                          <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                          <div className="w-2 h-2 bg-book-cloth rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                          <div className="w-2 h-2 bg-book-cloth rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                          <div className="w-2 h-2 bg-book-cloth rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                         </div>
                       </div>
                     </div>
@@ -867,7 +853,7 @@ export default function InterviewPage() {
             </div>
 
             {/* Input Area - Auto-expanding */}
-            <div className="relative bg-white/80 backdrop-blur-sm border-t border-gray-100 p-4 shadow-lg">
+            <div className="relative bg-background/95 backdrop-blur-sm border-t border-border p-4 shadow-lg">
               <div className="max-w-[680px] mx-auto">
                 {/* Input box with send button inside */}
                 <div className="relative mb-2">
@@ -883,7 +869,7 @@ export default function InterviewPage() {
                     }}
                     disabled={isLoading}
                     rows={1}
-                    className="w-full pl-14 pr-16 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-400 focus:border-transparent outline-none transition-all disabled:opacity-50 placeholder:text-gray-400 resize-none overflow-y-auto scrollbar-hide"
+                    className="w-full pl-14 pr-16 py-3 bg-background border border-input rounded-xl focus:ring-2 focus:ring-book-cloth focus:border-transparent outline-none transition-all disabled:opacity-50 placeholder:text-muted-foreground resize-none overflow-y-auto scrollbar-hide"
                     style={{
                       minHeight: '48px',
                       maxHeight: '144px',
@@ -904,11 +890,11 @@ export default function InterviewPage() {
                   <motion.button
                     onClick={sendMessage}
                     disabled={isLoading || !inputMessage.trim()}
-                    className="absolute right-2 bottom-3 p-2 bg-gradient-to-r from-purple-600 via-purple-500 to-orange-400 text-white font-medium rounded-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="absolute right-2 bottom-3 p-2 bg-book-cloth text-white font-medium rounded-lg hover:shadow-lg hover:bg-book-cloth/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                     whileHover={{ scale: !isLoading && inputMessage.trim() ? 1.05 : 1 }}
                     whileTap={{ scale: !isLoading && inputMessage.trim() ? 0.95 : 1 }}
                   >
-                    <span className="text-lg leading-none">→</span>
+                    <Send className="w-4 h-4" />
                   </motion.button>
                 </div>
 
@@ -918,14 +904,14 @@ export default function InterviewPage() {
                     <button
                       onClick={handlePlayLastMessage}
                       disabled={!messages.some(m => m.role === 'assistant') || voiceControls.isGeneratingSpeech || voiceControls.isPlaying}
-                      className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <span>🔊</span>
                       <span>Repeat last</span>
                     </button>
                     <button
                       onClick={voiceControls.toggleAutoPlay}
-                      className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors"
+                      className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
                     >
                       <span>{voiceControls.autoPlayEnabled ? '⏸' : '▶'}</span>
                       <span>Auto-play</span>
@@ -933,7 +919,7 @@ export default function InterviewPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     {voiceControls.isTranscribing && (
-                      <span className="flex items-center gap-1.5 text-purple-600">
+                      <span className="flex items-center gap-1.5 text-book-cloth">
                         <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
@@ -942,7 +928,7 @@ export default function InterviewPage() {
                       </span>
                     )}
                     {voiceControls.isGeneratingSpeech && (
-                      <span className="flex items-center gap-1.5 text-purple-600">
+                      <span className="flex items-center gap-1.5 text-book-cloth">
                         <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
@@ -951,7 +937,7 @@ export default function InterviewPage() {
                       </span>
                     )}
                     {voiceControls.isPlaying && (
-                      <span className="flex items-center gap-1.5 text-purple-600">
+                      <span className="flex items-center gap-1.5 text-book-cloth">
                         <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" />
                         </svg>
@@ -959,7 +945,7 @@ export default function InterviewPage() {
                       </span>
                     )}
                     {inputMessage && !voiceControls.isTranscribing && !voiceControls.isGeneratingSpeech && !voiceControls.isPlaying && (
-                      <span className="text-gray-400">{inputMessage.length} characters</span>
+                      <span className="text-muted-foreground">{inputMessage.length} characters</span>
                     )}
                   </div>
                 </div>
@@ -990,20 +976,20 @@ export default function InterviewPage() {
                   <div className="flex gap-3">
                     <button
                       onClick={downloadPDF}
-                      className="px-6 py-3 bg-tacivo-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all"
+                      className="px-6 py-3 bg-book-cloth text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-book-cloth/90 transition-all"
                     >
                       Download PDF
                     </button>
                     <button
                       onClick={startNewInterview}
-                      className="px-6 py-3 bg-gradient-to-r from-tacivo-purple to-tacivo-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all"
+                      className="px-6 py-3 bg-slate-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-slate-dark/90 transition-all"
                     >
                       Start New Interview
                     </button>
                   </div>
                 </div>
 
-                <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-tacivo-purple prose-a:text-tacivo-orange">
+                <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-book-cloth prose-a:text-book-cloth">
                   <ReactMarkdown>{generatedDocument}</ReactMarkdown>
                 </div>
               </motion.div>

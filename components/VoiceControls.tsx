@@ -40,8 +40,8 @@ export function VoiceControls({
           isRecording
             ? 'text-red-500 bg-red-50 scale-110'
             : isTranscribing
-            ? 'text-purple-500'
-            : 'text-[#7c3aed] opacity-90 hover:opacity-100 hover:scale-110 hover:bg-purple-50'
+            ? 'text-book-cloth'
+            : 'text-book-cloth opacity-90 hover:opacity-100 hover:scale-110 hover:bg-book-cloth/10'
         } disabled:opacity-50 disabled:cursor-not-allowed`}
         title={isRecording ? 'Click to stop recording' : 'Start recording'}
       >

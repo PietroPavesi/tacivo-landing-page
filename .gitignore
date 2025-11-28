@@ -20,9 +20,16 @@ next-env.d.ts
 !.vscode/extensions.json
 .idea
 .DS_Store
+*.DS_Store
+
+# backup files
+*.bak
+*~
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 .env
+.env.local
+.env*.local
