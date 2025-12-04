@@ -78,7 +78,7 @@ teams, new hires, and AI systems instantly, for ever.
               </Button>
               <Button
                 size="lg"
-                className="bg-[hsl(15,52%,58%)] text-white hover:bg-[hsl(15,52%,52%)] group transition-transform duration-300 hover:scale-105"
+                className="bg-book-cloth text-white hover:bg-book-cloth/90 group transition-transform duration-300 hover:scale-105"
                 asChild
               >
                 <Link href="/partners">

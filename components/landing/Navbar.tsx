@@ -41,6 +41,12 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
+            <a
+              href="/partners"
+              className="relative text-sm text-cloud-medium hover:text-ivory-light transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-book-cloth after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Partners
+            </a>
           </div>
 
           {/* CTA */}
