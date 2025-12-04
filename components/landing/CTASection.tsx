@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const CTASection = () => {
   return (
@@ -40,22 +41,14 @@ const CTASection = () => {
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
-                  variant="default"
-                  className="bg-book-cloth text-white hover:bg-book-cloth/90 border-0 transition-all duration-300 hover:shadow-lg hover:shadow-book-cloth/30"
+                  size="lg"
+                  className="bg-[hsl(15,52%,58%)] text-white hover:bg-[hsl(15,52%,52%)] group transition-transform duration-300 hover:scale-105"
                   asChild
                 >
-                  <a href="mailto:hello@tacivo.com?subject=Founding Partnership Application&body=Hi Tacivo team,%0D%0A%0D%0AI'm interested in becoming a founding partner and helping shape the future of Tacivo.%0D%0A%0D%0AOrganization:%0D%0ARole:%0D%0AHow we could collaborate:%0D%0A%0D%0AThank you!">
+                  <Link href="/partners">
                     Apply for Partnership
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-slate-light text-ivory-light hover:text-ivory-light hover:bg-ivory-light/10 hover:border-book-cloth bg-transparent"
-                  asChild
-                >
-                  <a href="mailto:hello@tacivo.com?subject=Sales Inquiry&body=Hi Tacivo team,%0D%0A%0D%0AI'd like to learn more about Tacivo for my organization.%0D%0A%0D%0AOrganization:%0D%0ANumber of employees:%0D%0AUse case:%0D%0A%0D%0AThank you!">
-                    Contact Sales
-                  </a>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
               </div>
             </div>

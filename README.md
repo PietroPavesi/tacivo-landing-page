@@ -1,267 +1,177 @@
-# Tacivo Landing Page
+# Supabase CLI
 
-A modern B2B SaaS landing page and AI-powered interview platform for Tacivo - helping organizations capture, preserve, and leverage critical tacit knowledge before it walks out the door.
+[![Coverage Status](https://coveralls.io/repos/github/supabase/cli/badge.svg?branch=main)](https://coveralls.io/github/supabase/cli?branch=main) [![Bitbucket Pipelines](https://img.shields.io/bitbucket/pipelines/supabase-cli/setup-cli/master?style=flat-square&label=Bitbucket%20Canary)](https://bitbucket.org/supabase-cli/setup-cli/pipelines) [![Gitlab Pipeline Status](https://img.shields.io/gitlab/pipeline-status/sweatybridge%2Fsetup-cli?label=Gitlab%20Canary)
+](https://gitlab.com/sweatybridge/setup-cli/-/pipelines)
 
-## Overview
+[Supabase](https://supabase.io) is an open source Firebase alternative. We're building the features of Firebase using enterprise-grade open source tools.
 
-Tacivo transforms organizational tacit knowledge into structured, searchable documentation through AI-powered interviews. This repository contains:
+This repository contains all the functionality for Supabase CLI.
 
-- **Landing Page**: Modern, conversion-focused design showcasing the platform's value proposition
-- **Interview Platform**: Interactive AI interviewer that transforms expert knowledge into professional documentation
+- [x] Running Supabase locally
+- [x] Managing database migrations
+- [x] Creating and deploying Supabase Functions
+- [x] Generating types directly from your database schema
+- [x] Making authenticated HTTP requests to [Management API](https://supabase.com/docs/reference/api/introduction)
 
-## Tech Stack
+## Getting started
 
-- **Framework**: Next.js 15.5.6 (App Router) with React 18.3.1
-- **Language**: TypeScript 5.5.3
-- **Styling**: Tailwind CSS 3.4.1 with custom design system
-- **UI Components**: shadcn/ui with Radix UI primitives
-- **Animations**: Framer Motion 12.23.24
-- **Icons**: Lucide React 0.344.0
-- **AI**: Anthropic Claude API for intelligent interviews
-- **Voice**: ElevenLabs for text-to-speech and speech-to-text
-- **Fonts**: Playfair Display (serif) & Inter (sans-serif) via next/font/google
+### Install the CLI
 
-## Design System
-
-### Colors (HSL-based)
-
-```css
-/* Primary Palette */
---book-cloth: hsl(15 52% 58%)    /* #CC785C - Primary accent */
---kraft: hsl(36 27% 56%)          /* Warm secondary */
---manilla: hsl(60 30% 97%)        /* Light background */
-
-/* Neutrals */
---slate-dark: hsl(60 2% 10%)      /* Dark backgrounds */
---ivory-light: hsl(60 30% 97%)    /* Light backgrounds */
---cloud-medium: hsl(0 0% 60%)     /* Medium text */
-
-/* Semantic Tokens */
---foreground: hsl(60 2% 10%)
---background: hsl(60 30% 97%)
---muted-foreground: hsl(0 0% 45%)
-```
-
-### Typography
-
-- **Display/Headlines**: Playfair Display (400, 500, 600, 700, italic)
-  - Large headlines: 48-72px
-  - Serif for elegance and authority
-- **Body Text**: Inter (400, 500, 600, 700)
-  - Body: 16-20px
-  - Clean, modern sans-serif
-- Both fonts optimized via next/font/google with `display: 'swap'`
-
-### Design Principles
-
-- **Professional elegance**: Book-cloth color palette inspired by traditional knowledge preservation
-- **Smooth animations**: Framer Motion for scroll-triggered and micro-interactions
-- **Responsive-first**: Mobile to desktop optimization
-- **Accessibility**: Semantic HTML, ARIA labels, keyboard navigation
-
-## Project Structure
-
-```
-tacivo-landing-page/
-├── app/
-│   ├── api/                    # API routes for AI functionality
-│   │   ├── chat-best-practices/
-│   │   ├── chat-case-study/
-│   │   ├── generate-doc-*/
-│   │   ├── speech-to-text/
-│   │   └── text-to-speech/
-│   ├── interview/              # Interview platform page
-│   │   └── page.tsx
-│   ├── layout.tsx              # Root layout with fonts & metadata
-│   ├── page.tsx                # Landing page
-│   └── globals.css             # Global styles & animations
-├── components/
-│   ├── landing/                # Landing page components
-│   │   ├── Navbar.tsx
-│   │   ├── HeroSection.tsx
-│   │   ├── StatsSection.tsx
-│   │   ├── ProblemSection.tsx
-│   │   ├── PlatformSection.tsx
-│   │   ├── HowItWorksSection.tsx
-│   │   ├── CTASection.tsx
-│   │   └── Footer.tsx
-│   ├── ui/                     # shadcn/ui components
-│   │   └── button.tsx
-│   └── VoiceControls.tsx       # Voice input component
-├── hooks/
-│   └── useVoiceControls.ts     # Voice functionality hook
-├── public/
-│   └── assets/
-│       └── logo/svg/           # Logo variations (13.svg, 15.svg)
-├── tailwind.config.js          # Custom design tokens
-└── package.json
-```
-
-## Features
-
-### Landing Page
-
-- **Responsive Navbar**: Logo switches on scroll (13.svg → 15.svg), smooth height transitions
-- **Hero Section**: Rotating word animation ("Capture", "Preserve", "Leverage")
-- **Stats Section**: Data-driven trust builders with hover effects
-- **Interactive Sections**: Problem, Platform, How It Works
-- **CTA Buttons**: All use mailto: links to hello@tacivo.com with pre-filled subjects
-
-### Interview Platform (`/interview`)
-
-1. **Initial Form**: Collect expert details & select document type (Case Study vs Best Practices)
-2. **Context & Upload**: Describe topic, optional file uploads (PDF, DOCX, PPTX, TXT, MD)
-3. **AI Interview**:
-   - Interactive chat with Claude AI
-   - Voice controls (record, transcribe, text-to-speech)
-   - Progress tracking (12 questions)
-   - Auto-play option for accessibility
-4. **Document Generation**: Professional markdown document with PDF export
-
-### Technical Features
-
-- **Server-Side Rendering**: Optimized SEO & performance
-- **Static Generation**: Landing page pre-rendered at build time
-- **API Routes**: Serverless functions for AI & voice processing
-- **Type Safety**: Full TypeScript coverage
-- **Responsive Design**: Mobile-first with breakpoint optimization
-- **Smooth Animations**:
-  - fadeIn, fadeInUp keyframes
-  - Framer Motion for complex transitions
-  - Scroll-triggered reveals
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ (recommended: 20+)
-- npm or yarn
-- API Keys:
-  - Anthropic API key (for AI interviews)
-  - ElevenLabs API key (for voice features)
-
-### Installation
+Available via [NPM](https://www.npmjs.com) as dev dependency. To install:
 
 ```bash
-# Clone the repository
-git clone https://github.com/PietroPavesi/tacivo-landing-page.git
-
-# Navigate to project directory
-cd tacivo-landing-page
-
-# Install dependencies
-npm install
-
-# Create environment file
-cp .env.example .env.local
+npm i supabase --save-dev
 ```
 
-### Environment Variables
+When installing with yarn 4, you need to disable experimental fetch with the following nodejs config.
 
-Create a `.env.local` file with:
-
-```env
-# Anthropic API Key
-# Get your API key from: https://console.anthropic.com/
-ANTHROPIC_API_KEY=sk-ant-api03-...
-
-# ElevenLabs API Key (for text-to-speech)
-# Get your API key from: https://elevenlabs.io/
-ELEVENLABS_API_KEY=sk_...
+```
+NODE_OPTIONS=--no-experimental-fetch yarn add supabase
 ```
 
-**Important**: Never commit `.env.local` to git. It's already in `.gitignore`.
+> **Note**
+For Bun versions below v1.0.17, you must add `supabase` as a [trusted dependency](https://bun.sh/guides/install/trusted) before running `bun add -D supabase`.
 
-### Development
+<details>
+  <summary><b>macOS</b></summary>
+
+  Available via [Homebrew](https://brew.sh). To install:
+
+  ```sh
+  brew install supabase/tap/supabase
+  ```
+
+  To install the beta release channel:
+  
+  ```sh
+  brew install supabase/tap/supabase-beta
+  brew link --overwrite supabase-beta
+  ```
+  
+  To upgrade:
+
+  ```sh
+  brew upgrade supabase
+  ```
+</details>
+
+<details>
+  <summary><b>Windows</b></summary>
+
+  Available via [Scoop](https://scoop.sh). To install:
+
+  ```powershell
+  scoop bucket add supabase https://github.com/supabase/scoop-bucket.git
+  scoop install supabase
+  ```
+
+  To upgrade:
+
+  ```powershell
+  scoop update supabase
+  ```
+</details>
+
+<details>
+  <summary><b>Linux</b></summary>
+
+  Available via [Homebrew](https://brew.sh) and Linux packages.
+
+  #### via Homebrew
+
+  To install:
+
+  ```sh
+  brew install supabase/tap/supabase
+  ```
+
+  To upgrade:
+
+  ```sh
+  brew upgrade supabase
+  ```
+
+  #### via Linux packages
+
+  Linux packages are provided in [Releases](https://github.com/supabase/cli/releases). To install, download the `.apk`/`.deb`/`.rpm`/`.pkg.tar.zst` file depending on your package manager and run the respective commands.
+
+  ```sh
+  sudo apk add --allow-untrusted <...>.apk
+  ```
+
+  ```sh
+  sudo dpkg -i <...>.deb
+  ```
+
+  ```sh
+  sudo rpm -i <...>.rpm
+  ```
+
+  ```sh
+  sudo pacman -U <...>.pkg.tar.zst
+  ```
+</details>
+
+<details>
+  <summary><b>Other Platforms</b></summary>
+
+  You can also install the CLI via [go modules](https://go.dev/ref/mod#go-install) without the help of package managers.
+
+  ```sh
+  go install github.com/supabase/cli@latest
+  ```
+
+  Add a symlink to the binary in `$PATH` for easier access:
+
+  ```sh
+  ln -s "$(go env GOPATH)/bin/cli" /usr/bin/supabase
+  ```
+
+  This works on other non-standard Linux distros.
+</details>
+
+<details>
+  <summary><b>Community Maintained Packages</b></summary>
+
+  Available via [pkgx](https://pkgx.sh/). Package script [here](https://github.com/pkgxdev/pantry/blob/main/projects/supabase.com/cli/package.yml).
+  To install in your working directory:
+
+  ```bash
+  pkgx install supabase
+  ```
+
+  Available via [Nixpkgs](https://nixos.org/). Package script [here](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/supabase-cli/default.nix).
+</details>
+
+### Run the CLI
 
 ```bash
-# Start development server
-npm run dev
-
-# Run type checking
-npm run typecheck
-
-# Run linter
-npm run lint
-
-# Build for production
-npm run build
-
-# Start production server
-npm run start
+supabase bootstrap
 ```
 
-The development server will start at `http://localhost:3000`
+Or using npx:
 
-## Deployment
+```bash
+npx supabase bootstrap
+```
 
-### Vercel (Recommended)
+The bootstrap command will guide you through the process of setting up a Supabase project using one of the [starter](https://github.com/supabase-community/supabase-samples/blob/main/samples.json) templates.
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Production-ready deployment"
-   git push origin main
-   ```
+## Docs
 
-2. **Deploy on Vercel**
-   - Import repository at [vercel.com](https://vercel.com)
-   - Add environment variables in project settings:
-     - `ANTHROPIC_API_KEY`
-     - `ELEVENLABS_API_KEY`
-   - Deploy!
+Command & config reference can be found [here](https://supabase.com/docs/reference/cli/about).
 
-3. **Auto-Deployments**
-   - Every push to `main` triggers a new deployment
-   - Preview deployments for PRs
+## Breaking changes
 
-### Other Platforms
+We follow semantic versioning for changes that directly impact CLI commands, flags, and configurations.
 
-The app works on any platform supporting Next.js 15:
-- Netlify
-- Railway
-- AWS Amplify
-- Self-hosted with Docker
+However, due to dependencies on other service images, we cannot guarantee that schema migrations, seed.sql, and generated types will always work for the same CLI major version. If you need such guarantees, we encourage you to pin a specific version of CLI in package.json.
 
-## API Routes
+## Developing
 
-All API routes are serverless functions in `/app/api/`:
+To run from source:
 
-- `POST /api/chat-best-practices` - AI chat for best practices guides
-- `POST /api/chat-case-study` - AI chat for case studies
-- `POST /api/generate-doc-best-practices` - Generate best practices document
-- `POST /api/generate-doc-case-study` - Generate case study document
-- `POST /api/speech-to-text` - Transcribe audio to text
-- `POST /api/text-to-speech` - Convert text to speech
-
-## Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile Safari (iOS 14+)
-- Chrome Mobile (Android)
-
-## Performance
-
-- **First Load JS**: ~107 KB (optimized)
-- **Landing Page**: Static, pre-rendered
-- **Interview Page**: Static with dynamic API calls
-- **Build Time**: ~4-6 seconds
-- **Lighthouse Score**: 90+ across all metrics
-
-## Contributing
-
-This is a private repository. For questions or collaboration:
-- Email: hello@tacivo.com
-- Website: [tacivo.com](https://tacivo.com)
-
-## License
-
-Private - All rights reserved
-
-## Acknowledgments
-
-- Design system inspired by Anthropic and Mues AI
-- Built with modern web best practices
-- Powered by Anthropic Claude and ElevenLabs
+```sh
+# Go >= 1.22
+go run . help
+```

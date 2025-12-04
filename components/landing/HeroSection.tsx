@@ -3,8 +3,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
-const rotatingWords = ["Capture", "Preserve", "Leverage"];
+const rotatingWords = ["Codify", "Preserve", "Leverage"];
 
 const HeroSection = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -57,28 +58,34 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="text-lg text-[hsl(0,0%,60%)] mb-10 leading-relaxed animate-fade-in-delay-1">
-              Your experts hold irreplaceable knowledge. Tacivo 
-captures it through AI and transforms 
-it into collective enterprise intelligence, accessible to 
+              Your experts hold irreplaceable knowledge. Tacivo AI
+captures and transforms it into collective enterprise intelligence, accessible to 
 teams, new hires, and AI systems instantly, for ever.
             </p>
 
             {/* CTA Group */}
             <div className="flex flex-col sm:flex-row items-start gap-4 animate-fade-in-delay-2">
               <Button
-                variant="default"
+                variant="ghost"
                 size="lg"
-                className="bg-white text-slate-dark hover:bg-white/90 group transition-transform duration-300 hover:scale-105"
+                className="border border-slate-light text-ivory-light hover:text-ivory-light hover:bg-ivory-light/10 hover:border-book-cloth bg-transparent group transition-transform duration-300 hover:scale-105"
                 asChild
               >
                 <a href="mailto:hello@tacivo.com?subject=Demo Request&body=Hi Tacivo team,%0D%0A%0D%0AI'd like to schedule a demo to learn more about how Tacivo can help capture and preserve our organization's tacit knowledge.%0D%0A%0D%0AThank you!">
-                  Get a demo
+                  Book a demo
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
-              <span className="text-sm text-[hsl(0,0%,50%)] self-center">
-                for your organization
-              </span>
+              <Button
+                size="lg"
+                className="bg-[hsl(15,52%,58%)] text-white hover:bg-[hsl(15,52%,52%)] group transition-transform duration-300 hover:scale-105"
+                asChild
+              >
+                <Link href="/partners">
+                  Become Founding Partner
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
 
             {/* Trust logos */}
