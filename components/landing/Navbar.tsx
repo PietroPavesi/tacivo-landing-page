@@ -32,7 +32,7 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
-            {["Platform", "How It Works", "Resources"].map((item) => (
+            {["Platform", "How It Works"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/ /g, '-')}`}
@@ -41,6 +41,12 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
+            <a
+              href="/resources"
+              className="relative text-sm text-cloud-medium hover:text-ivory-light transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-book-cloth after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Resources
+            </a>
             <a
               href="/partners"
               className="relative text-sm text-cloud-medium hover:text-ivory-light transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-book-cloth after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"

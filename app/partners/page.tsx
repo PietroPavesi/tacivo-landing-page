@@ -198,9 +198,9 @@ const PartnersPage = () => {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-5" suppressHydrationWarning>
+                <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Name */}
-                  <div suppressHydrationWarning>
+                  <div>
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                       Full Name *
                     </label>

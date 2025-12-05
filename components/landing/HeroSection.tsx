@@ -1,7 +1,6 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -73,8 +72,7 @@ teams, new hires, and AI systems instantly, for ever.
               >
                 <a href="mailto:hello@tacivo.com?subject=Demo Request&body=Hi Tacivo team,%0D%0A%0D%0AI'd like to schedule a demo to learn more about how Tacivo can help capture and preserve our organization's tacit knowledge.%0D%0A%0D%0AThank you!">
                   Book a demo
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                  </a>
               </Button>
               <Button
                 size="lg"
@@ -83,8 +81,7 @@ teams, new hires, and AI systems instantly, for ever.
               >
                 <Link href="/partners">
                   Become Founding Partner
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
+                  </Link>
               </Button>
             </div>
 
@@ -101,74 +98,68 @@ teams, new hires, and AI systems instantly, for ever.
             </div>
           </div>
 
-          {/* Right - Product Visual */}
-          <div className="relative lg:pl-8 animate-fade-in-delay-1">
-            <div className="relative rounded-xl bg-[hsl(0,0%,6%)] overflow-hidden gradient-border-pastel-dark transition-transform duration-500 hover:scale-[1.02]">
-              {/* Browser header */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-[hsl(0,0%,15%)] bg-[hsl(0,0%,5%)]">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[hsl(0,0%,20%)]" />
-                  <div className="w-3 h-3 rounded-full bg-[hsl(0,0%,20%)]" />
-                  <div className="w-3 h-3 rounded-full bg-[hsl(0,0%,20%)]" />
-                </div>
-                <div className="flex-1 flex justify-center">
-                  <div className="px-4 py-1 rounded bg-[hsl(0,0%,10%)] text-xs text-[hsl(0,0%,50%)]">
-                    tacivo.app
+          {/* Right - Document Cards */}
+          <div className="relative lg:pl-8 animate-fade-in-delay-1 flex items-center justify-center">
+            <div className="relative w-full max-w-md h-[450px]">
+              {/* Card 3 - Top Right (Sales Best Practice) */}
+              <div className="absolute top-0 left-0 right-0 h-[160px] rounded-2xl bg-gradient-to-br from-[hsl(0,0%,14%)] to-[hsl(0,0%,10%)] border border-[hsl(0,0%,25%)] p-5 shadow-2xl transform rotate-[6deg] translate-x-8 translate-y-[-30px] opacity-90 transition-all duration-500 hover:rotate-[8deg] hover:translate-y-[-60px] hover:opacity-100 z-10">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-7 h-7 rounded-lg bg-kraft/30 flex items-center justify-center flex-shrink-0">
+                    <span className="text-kraft text-base">💼</span>
                   </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-sm mb-0.5">Enterprise Sales Negotiation</h3>
+                    <p className="text-[hsl(0,0%,55%)] text-xs">From David Martinez, VP Sales</p>
+                  </div>
+                </div>
+                <p className="text-[hsl(0,0%,65%)] text-xs leading-relaxed mb-2">
+                  For enterprise deals over $500K, involve legal early. Focus on business value, not features...
+                </p>
+                <div className="flex gap-2">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-kraft/20 text-kraft border border-kraft/30">Best Practice</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[hsl(0,0%,15%)] text-[hsl(0,0%,60%)]">Sales</span>
                 </div>
               </div>
 
-              {/* App content mockup */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-[hsl(0,0%,15%)] flex items-center justify-center">
-                    <span className="text-white font-medium text-sm">AI</span>
+              {/* Card 2 - Top Left (Engineering Best Practice) */}
+              <div className="absolute top-0 left-0 right-0 h-[160px] rounded-2xl bg-gradient-to-br from-[hsl(0,0%,14%)] to-[hsl(0,0%,10%)] border border-[hsl(0,0%,25%)] p-5 shadow-2xl transform rotate-[-6deg] translate-x-[-32px] translate-y-[50px] opacity-90 transition-all duration-500 hover:rotate-[-8deg] hover:translate-y-[16px] hover:opacity-100 z-10">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-7 h-7 rounded-lg bg-book-cloth/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-book-cloth text-base">⚙️</span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-white">Knowledge Elicitation Session</p>
-                    <p className="text-xs text-[hsl(0,0%,50%)]">With Senior Engineer</p>
+                    <h3 className="text-white font-semibold text-sm mb-0.5">Code Review Best Practices</h3>
+                    <p className="text-[hsl(0,0%,55%)] text-xs">From Marcus Johnson, Tech Lead</p>
                   </div>
                 </div>
+                <p className="text-[hsl(0,0%,65%)] text-xs leading-relaxed mb-2">
+                  Review for intent first, syntax second. Ask questions rather than making demands...
+                </p>
+                <div className="flex gap-2">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-book-cloth/20 text-book-cloth border border-book-cloth/30">Best Practice</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[hsl(0,0%,15%)] text-[hsl(0,0%,60%)]">Engineering</span>
+                </div>
+              </div>
 
-                {/* Chat bubbles */}
-                <div className="space-y-3">
-                  <div className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[hsl(0,0%,20%)] flex-shrink-0" />
-                    <div className="bg-[hsl(0,0%,12%)] rounded-lg rounded-tl-none px-4 py-2 max-w-[80%]">
-                      <p className="text-sm text-[hsl(0,0%,60%)]">
-                        When troubleshooting production issues, what's your first instinct?
-                      </p>
-                    </div>
+              {/* Card 1 - Front (moved down) */}
+              <div className="absolute top-0 left-0 right-0 h-[180px] rounded-2xl bg-gradient-to-br from-[hsl(0,0%,16%)] to-[hsl(0,0%,12%)] border border-book-cloth/30 p-5 shadow-2xl transform rotate-0 translate-y-[140px] transition-all duration-500 hover:scale-105 hover:shadow-book-cloth/20 z-20">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-7 h-7 rounded-lg bg-book-cloth/30 flex items-center justify-center flex-shrink-0">
+                    <span className="text-book-cloth text-base">🔧</span>
                   </div>
-                  <div className="flex gap-3 justify-end">
-                    <div className="bg-[hsl(0,0%,18%)] border border-[hsl(0,0%,25%)] rounded-lg rounded-tr-none px-4 py-2 max-w-[80%]">
-                      <p className="text-sm text-white">
-                        I always check the deployment logs first, then correlate with recent
-                        changes...
-                      </p>
-                    </div>
-                    <div className="w-6 h-6 rounded-full bg-[hsl(0,0%,25%)] flex-shrink-0" />
-                  </div>
-                  <div className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[hsl(0,0%,20%)] flex-shrink-0" />
-                    <div className="bg-[hsl(0,0%,12%)] rounded-lg rounded-tl-none px-4 py-2 max-w-[80%]">
-                      <p className="text-sm text-[hsl(0,0%,60%)]">
-                        That's valuable. What patterns have you learned to recognize?
-                      </p>
-                    </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-sm mb-0.5">Production Debugging Methodology</h3>
+                    <p className="text-[hsl(0,0%,50%)] text-xs">From Sarah Chen, Principal Engineer</p>
                   </div>
                 </div>
-
-                {/* Insight tag */}
-                <div className="mt-4 pt-4 border-t border-[hsl(0,0%,15%)]">
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-1 bg-[hsl(0,0%,15%)] text-white text-xs rounded font-medium">
-                      Insight Captured
-                    </span>
-                    <span className="text-xs text-[hsl(0,0%,50%)]">
-                      Debugging methodology documented
-                    </span>
-                  </div>
+                <p className="text-[hsl(0,0%,65%)] text-xs leading-relaxed mb-2">
+                  When troubleshooting production issues, I always check the deployment logs first,
+                  then correlate with recent changes. Look for patterns...
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-book-cloth/20 text-book-cloth border border-book-cloth/30">Verified</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[hsl(0,0%,15%)] text-[hsl(0,0%,60%)]">Troubleshooting</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded bg-[hsl(0,0%,15%)] text-[hsl(0,0%,60%)]">Engineering</span>
                 </div>
               </div>
             </div>
