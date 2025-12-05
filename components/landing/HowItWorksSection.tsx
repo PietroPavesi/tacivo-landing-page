@@ -229,12 +229,12 @@ const mockups = [OrgChartMockup, ChatMockup, DocumentMockup, KnowledgeBaseMockup
 const HowItWorksSection = () => {
   return <section id="how-it-works" className="relative border-t border-border" style={{ backgroundColor: 'hsl(60 30% 97%)' }}>
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12">
         <div className="max-w-2xl">
-          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4 animate-fade-in">
+          <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-widest mb-3 sm:mb-4 animate-fade-in">
             How It Works
           </p>
-          <h2 className="text-3xl leading-tight text-foreground animate-fade-in-up md:text-5xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-foreground animate-fade-in-up">
             <span className="font-medium">From expert insights to </span>
             <span className="font-serif italic">Collective Enterprise Knowledge.</span>
           </h2>
@@ -244,32 +244,32 @@ const HowItWorksSection = () => {
       {/* Full-height scroll sections */}
       {steps.map((step, index) => {
       const MockupComponent = mockups[index];
-      return <div key={index} className="min-h-[80vh] flex items-center sticky top-0" style={{
+      return <div key={index} className="min-h-[70vh] sm:min-h-[80vh] flex items-center sticky top-0" style={{
         zIndex: index + 1,
         backgroundColor: 'hsl(60 30% 97%)'
       }}>
             <div className="max-w-5xl mx-auto px-6 lg:px-8 w-full">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
               {/* Card - Square */}
-                <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] p-6 rounded-xl bg-card flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] gradient-border-pastel">
+                <div className="w-full max-w-[280px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] p-5 sm:p-6 rounded-xl bg-card flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] gradient-border-pastel">
                   <div>
-                    <span className="text-4xl font-serif text-muted-foreground/30">
+                    <span className="text-3xl sm:text-4xl font-serif text-muted-foreground/30">
                       {step.number}
                     </span>
                   </div>
                   <div>
-                    <step.icon className="w-6 h-6 text-foreground mb-3 transition-transform duration-300 group-hover:scale-110" />
-                    <h3 className="text-xl font-medium text-foreground mb-2">
+                    <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground mb-2 sm:mb-3 transition-transform duration-300 group-hover:scale-110" />
+                    <h3 className="text-lg sm:text-xl font-medium text-foreground mb-1.5 sm:mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Mockup - Square */}
-                <div className="w-[280px] h-[280px] md:w-[320px] md:h-[320px] transition-all duration-500 hover:scale-[1.02] gradient-border-pastel rounded-xl">
+                <div className="w-full max-w-[280px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px] transition-all duration-500 hover:scale-[1.02] gradient-border-pastel rounded-xl">
                   <MockupComponent />
                 </div>
               </div>
@@ -278,7 +278,7 @@ const HowItWorksSection = () => {
     })}
 
       {/* Spacer */}
-      <div className="h-24" />
+      <div className="h-16 sm:h-24" />
     </section>;
 };
 export default HowItWorksSection;

@@ -36,12 +36,12 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
           {/* Left - Content */}
           <div className="max-w-xl">
             {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-8 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight mb-6 sm:mb-8 animate-fade-in">
               <span className="inline-block overflow-hidden h-[1.2em] align-bottom">
                 <span
                   className={`inline-block font-serif italic text-white transition-all duration-300 ${
@@ -56,18 +56,18 @@ const HeroSection = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg text-[hsl(0,0%,60%)] mb-10 leading-relaxed animate-fade-in-delay-1">
+            <p className="text-base sm:text-lg text-[hsl(0,0%,60%)] mb-8 sm:mb-10 leading-relaxed animate-fade-in-delay-1">
               Your experts hold irreplaceable knowledge. Tacivo AI
-captures and transforms it into collective enterprise intelligence, accessible to 
+captures and transforms it into collective enterprise intelligence, accessible to
 teams, new hires, and AI systems instantly, for ever.
             </p>
 
             {/* CTA Group */}
-            <div className="flex flex-col sm:flex-row items-start gap-4 animate-fade-in-delay-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-3 sm:gap-4 animate-fade-in-delay-2">
               <Button
                 variant="ghost"
                 size="lg"
-                className="border border-slate-light text-ivory-light hover:text-ivory-light hover:bg-ivory-light/10 hover:border-book-cloth bg-transparent group transition-transform duration-300 hover:scale-105"
+                className="w-full sm:w-auto border border-slate-light text-ivory-light hover:text-ivory-light hover:bg-ivory-light/10 hover:border-book-cloth bg-transparent group transition-transform duration-300 hover:scale-105"
                 asChild
               >
                 <a href="mailto:hello@tacivo.com?subject=Demo Request&body=Hi Tacivo team,%0D%0A%0D%0AI'd like to schedule a demo to learn more about how Tacivo can help capture and preserve our organization's tacit knowledge.%0D%0A%0D%0AThank you!">
@@ -76,7 +76,7 @@ teams, new hires, and AI systems instantly, for ever.
               </Button>
               <Button
                 size="lg"
-                className="!bg-book-cloth text-white hover:!bg-book-cloth/90 group transition-transform duration-300 hover:scale-105"
+                className="w-full sm:w-auto !bg-book-cloth text-white hover:!bg-book-cloth/90 group transition-transform duration-300 hover:scale-105"
                 asChild
               >
                 <Link href="/partners">
@@ -86,20 +86,20 @@ teams, new hires, and AI systems instantly, for ever.
             </div>
 
             {/* Trust logos */}
-            <div className="mt-20 pt-8 border-t border-[hsl(0,0%,15%)] animate-fade-in-delay-2">
-              <p className="text-xs text-[hsl(0,0%,40%)] mb-6 uppercase tracking-widest">
+            <div className="mt-12 sm:mt-16 lg:mt-20 pt-6 sm:pt-8 border-t border-[hsl(0,0%,15%)] animate-fade-in-delay-2">
+              <p className="text-xs text-[hsl(0,0%,40%)] mb-4 sm:mb-6 uppercase tracking-widest">
                 Built on proven knowledge frameworks
               </p>
-              <div className="flex flex-wrap items-center gap-6 text-[hsl(0,0%,35%)]">
-                <span className="text-sm">SECI Model</span>
-                <span className="text-sm">Cognitive Task Analysis</span>
-                <span className="text-sm">Expert Elicitation</span>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-[hsl(0,0%,35%)]">
+                <span className="text-xs sm:text-sm">SECI Model</span>
+                <span className="text-xs sm:text-sm">Cognitive Task Analysis</span>
+                <span className="text-xs sm:text-sm">Expert Elicitation</span>
               </div>
             </div>
           </div>
 
           {/* Right - Document Cards */}
-          <div className="relative lg:pl-8 animate-fade-in-delay-1 flex items-center justify-center">
+          <div className="relative lg:pl-8 animate-fade-in-delay-1 items-center justify-center hidden lg:flex">
             <div className="relative w-full max-w-md h-[450px]">
               {/* Card 3 - Top Right (Sales Best Practice) */}
               <div className="absolute top-0 left-0 right-0 h-[160px] rounded-2xl bg-gradient-to-br from-[hsl(0,0%,14%)] to-[hsl(0,0%,10%)] border border-[hsl(0,0%,25%)] p-5 shadow-2xl transform rotate-[6deg] translate-x-8 translate-y-[-30px] opacity-90 transition-all duration-500 hover:rotate-[8deg] hover:translate-y-[-60px] hover:opacity-100 z-10">
