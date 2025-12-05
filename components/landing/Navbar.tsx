@@ -32,7 +32,7 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
-            {["Problem", "Platform", "How It Works", "Resources"].map((item) => (
+            {["Platform", "How It Works", "Resources"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(/ /g, '-')}`}

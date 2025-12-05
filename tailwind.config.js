@@ -4,7 +4,9 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   safelist: [
     'bg-book-cloth',
+    '!bg-book-cloth',
     'hover:bg-book-cloth/90',
+    'hover:!bg-book-cloth/90',
     'after:bg-book-cloth',
     'hover:border-book-cloth',
   ],
